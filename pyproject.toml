@@ -1,0 +1,13 @@
+[project]
+name = "honest-by-omission"
+version = "0.1.0"
+description = "A one-line system prompt games the MASK honesty benchmark"
+requires-python = ">=3.11"
+dependencies = [
+    "openai>=1.40",
+    "pandas>=2.2",
+    "pyarrow>=15",
+    "huggingface_hub>=0.24",
+    "statsmodels>=0.14",
+    "scipy>=1.13",
+]

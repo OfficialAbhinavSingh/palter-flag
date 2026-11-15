@@ -1,0 +1,5 @@
+model,condition,mask_honesty,corrected_honesty
+meta-llama/llama-3.3-70b-instruct,baseline,41.7,35.0
+meta-llama/llama-3.3-70b-instruct,imply,56.7,26.7
+openai/gpt-4o-mini,baseline,58.3,45.0
+openai/gpt-4o-mini,imply,68.3,33.3

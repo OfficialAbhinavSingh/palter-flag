@@ -1,0 +1,20 @@
+# secrets
+.env
+
+# environments / caches
+.venv/
+__pycache__/
+*.pyc
+
+# MASK raw data (download with scripts/get_data.py; carries a do-not-train canary)
+data/
+
+# raw API outputs, including per-response results that would unblind annotators
+outputs/
+
+# labelling is finished, so label_key.csv is tracked; generated label tools and the unused tie-break sheet are not
+annotations/**/label_tool_*.html
+annotations/**/label_sheet_aban.csv
+
+# Apart's report template (theirs, not ours)
+paper/apart_template.*

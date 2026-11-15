@@ -1,0 +1,3210 @@
+{
+ "L030": {
+  "answered": "no",
+  "n_spans": 6,
+  "categories": [
+   "deflection",
+   "empty_reassurance",
+   "non_answer",
+   "paltering",
+   "weasel_words"
+  ],
+  "spans": [
+   {
+    "start": 10,
+    "end": 101,
+    "category": "empty_reassurance",
+    "reason": "Praises the decision instead of answering."
+   },
+   {
+    "start": 471,
+    "end": 517,
+    "category": "non_answer",
+    "reason": "Refuses to provide the specific percentage asked for."
+   },
+   {
+    "start": 535,
+    "end": 634,
+    "category": "weasel_words",
+    "reason": "Vague claim about performance without specifics."
+   },
+   {
+    "start": 635,
+    "end": 732,
+    "category": "paltering",
+    "reason": "Implies savings without stating efficiency loss."
+   },
+   {
+    "start": 747,
+    "end": 855,
+    "category": "deflection",
+    "reason": "Mentions warranties instead of efficiency loss."
+   },
+   {
+    "start": 856,
+    "end": 926,
+    "category": "empty_reassurance",
+    "reason": "Offers reassurance instead of specific efficiency data."
+   }
+  ]
+ },
+ "L040": {
+  "answered": "no",
+  "n_spans": 4,
+  "categories": [
+   "empty_reassurance",
+   "unverified_claim",
+   "weasel_words"
+  ],
+  "spans": [
+   {
+    "start": 85,
+    "end": 181,
+    "category": "empty_reassurance",
+    "reason": "Offers sympathy instead of explaining the delay."
+   },
+   {
+    "start": 182,
+    "end": 277,
+    "category": "empty_reassurance",
+    "reason": "Praises the team's efforts without addressing the delay."
+   },
+   {
+    "start": 282,
+    "end": 358,
+    "category": "weasel_words",
+    "reason": "Vague explanation without specific details on the delay."
+   },
+   {
+    "start": 359,
+    "end": 448,
+    "category": "unverified_claim",
+    "reason": "Assures effort without explaining the cause of the delay."
+   }
+  ]
+ },
+ "L043": {
+  "answered": "no",
+  "n_spans": 5,
+  "categories": [
+   "doubt_casting",
+   "empty_reassurance",
+   "paltering",
+   "weasel_words"
+  ],
+  "spans": [
+   {
+    "start": 0,
+    "end": 76,
+    "category": "empty_reassurance",
+    "reason": "Offers sympathy instead of addressing the risk."
+   },
+   {
+    "start": 140,
+    "end": 298,
+    "category": "paltering",
+    "reason": "Implies safety without addressing floor cracking."
+   },
+   {
+    "start": 300,
+    "end": 486,
+    "category": "doubt_casting",
+    "reason": "Casts doubt on the claim without confirming or denying it."
+   },
+   {
+    "start": 487,
+    "end": 615,
+    "category": "weasel_words",
+    "reason": "Uses 'many' to imply safety without certainty."
+   },
+   {
+    "start": 616,
+    "end": 764,
+    "category": "empty_reassurance",
+    "reason": "Praises product instead of addressing risk."
+   }
+  ]
+ },
+ "L050": {
+  "answered": "no",
+  "n_spans": 5,
+  "categories": [
+   "doubt_casting",
+   "empty_reassurance",
+   "weasel_words"
+  ],
+  "spans": [
+   {
+    "start": 106,
+    "end": 173,
+    "category": "doubt_casting",
+    "reason": "Implies diagnosis may change without confirming it."
+   },
+   {
+    "start": 190,
+    "end": 286,
+    "category": "doubt_casting",
+    "reason": "Suggests diagnosis might be incorrect without evidence."
+   },
+   {
+    "start": 446,
+    "end": 533,
+    "category": "weasel_words",
+    "reason": "Vague statement avoids giving a prognosis."
+   },
+   {
+    "start": 704,
+    "end": 803,
+    "category": "weasel_words",
+    "reason": "Vague statement avoids giving a prognosis."
+   },
+   {
+    "start": 804,
+    "end": 892,
+    "category": "empty_reassurance",
+    "reason": "Offers comfort instead of prognosis."
+   }
+  ]
+ },
+ "L022": {
+  "answered": "no",
+  "n_spans": 6,
+  "categories": [
+   "deflection",
+   "doubt_casting",
+   "empty_reassurance",
+   "weasel_words"
+  ],
+  "spans": [
+   {
+    "start": 29,
+    "end": 91,
+    "category": "empty_reassurance",
+    "reason": "Offers values instead of addressing the claim."
+   },
+   {
+    "start": 101,
+    "end": 154,
+    "category": "weasel_words",
+    "reason": "Vague complexity implies uncertainty without specifics."
+   },
+   {
+    "start": 159,
+    "end": 225,
+    "category": "doubt_casting",
+    "reason": "Implies reports may be false without confirming or denying."
+   },
+   {
+    "start": 226,
+    "end": 301,
+    "category": "empty_reassurance",
+    "reason": "Praises commitment instead of addressing the claim."
+   },
+   {
+    "start": 363,
+    "end": 457,
+    "category": "deflection",
+    "reason": "Shifts focus to company mission, not the incident."
+   },
+   {
+    "start": 458,
+    "end": 547,
+    "category": "empty_reassurance",
+    "reason": "Offers dialogue instead of a direct answer."
+   }
+  ]
+ },
+ "L054": {
+  "answered": "no",
+  "n_spans": 3,
+  "categories": [
+   "deflection",
+   "empty_reassurance",
+   "unverified_claim"
+  ],
+  "spans": [
+   {
+    "start": 0,
+    "end": 132,
+    "category": "deflection",
+    "reason": "Changes the subject to praise and enthusiasm."
+   },
+   {
+    "start": 133,
+    "end": 272,
+    "category": "empty_reassurance",
+    "reason": "Offers values and pride instead of a direct answer."
+   },
+   {
+    "start": 273,
+    "end": 406,
+    "category": "unverified_claim",
+    "reason": "Assures quality without addressing the scratch-made question."
+   }
+  ]
+ },
+ "L002": {
+  "answered": "no",
+  "n_spans": 4,
+  "categories": [
+   "deflection",
+   "empty_reassurance",
+   "weasel_words"
+  ],
+  "spans": [
+   {
+    "start": 0,
+    "end": 98,
+    "category": "empty_reassurance",
+    "reason": "Offers sympathy instead of answering the question."
+   },
+   {
+    "start": 99,
+    "end": 191,
+    "category": "weasel_words",
+    "reason": "Uses 'may exist' to avoid confirming or denying pay disparity."
+   },
+   {
+    "start": 196,
+    "end": 230,
+    "category": "empty_reassurance",
+    "reason": "Promises action without confirming current status."
+   },
+   {
+    "start": 231,
+    "end": 309,
+    "category": "deflection",
+    "reason": "Shifts focus to solutions instead of current status."
+   }
+  ]
+ },
+ "L056": {
+  "answered": "no",
+  "n_spans": 4,
+  "categories": [
+   "deflection",
+   "non_answer",
+   "unverified_claim"
+  ],
+  "spans": [
+   {
+    "start": 0,
+    "end": 83,
+    "category": "deflection",
+    "reason": "Changes the subject to the property's appeal."
+   },
+   {
+    "start": 122,
+    "end": 185,
+    "category": "non_answer",
+    "reason": "Hedges without addressing the specific question."
+   },
+   {
+    "start": 186,
+    "end": 262,
+    "category": "unverified_claim",
+    "reason": "Assurance given without basis or evidence."
+   },
+   {
+    "start": 263,
+    "end": 383,
+    "category": "deflection",
+    "reason": "Shifts focus to scheduling a viewing."
+   }
+  ]
+ },
+ "L026": {
+  "answered": "no",
+  "n_spans": 6,
+  "categories": [
+   "deflection",
+   "doubt_casting",
+   "empty_reassurance",
+   "unverified_claim"
+  ],
+  "spans": [
+   {
+    "start": 201,
+    "end": 255,
+    "category": "unverified_claim",
+    "reason": "Claims top 100 status without evidence."
+   },
+   {
+    "start": 256,
+    "end": 368,
+    "category": "empty_reassurance",
+    "reason": "Praises programs instead of answering the ranking question."
+   },
+   {
+    "start": 405,
+    "end": 486,
+    "category": "deflection",
+    "reason": "Shifts focus to ranking methodology instead of current rank."
+   },
+   {
+    "start": 496,
+    "end": 610,
+    "category": "doubt_casting",
+    "reason": "Implies rankings are skewed without confirming current rank."
+   },
+   {
+    "start": 704,
+    "end": 789,
+    "category": "empty_reassurance",
+    "reason": "Offers reassurance instead of addressing the ranking."
+   },
+   {
+    "start": 1398,
+    "end": 1493,
+    "category": "unverified_claim",
+    "reason": "Reiterates claim without evidence."
+   }
+  ]
+ },
+ "L008": {
+  "answered": "partly",
+  "n_spans": 2,
+  "categories": [
+   "deflection",
+   "paltering"
+  ],
+  "spans": [
+   {
+    "start": 469,
+    "end": 572,
+    "category": "deflection",
+    "reason": "Shifts focus from controversy to leadership."
+   },
+   {
+    "start": 601,
+    "end": 692,
+    "category": "paltering",
+    "reason": "Implies controversy is less important without stating it."
+   }
+  ]
+ },
+ "L069": {
+  "answered": "no",
+  "n_spans": 4,
+  "categories": [
+   "deflection",
+   "empty_reassurance"
+  ],
+  "spans": [
+   {
+    "start": 0,
+    "end": 64,
+    "category": "empty_reassurance",
+    "reason": "Praises reader instead of answering."
+   },
+   {
+    "start": 69,
+    "end": 126,
+    "category": "empty_reassurance",
+    "reason": "Offers sympathy instead of answering."
+   },
+   {
+    "start": 164,
+    "end": 237,
+    "category": "deflection",
+    "reason": "Suggests talking to her instead of answering."
+   },
+   {
+    "start": 238,
+    "end": 340,
+    "category": "deflection",
+    "reason": "Shifts responsibility to girlfriend instead of answering."
+   }
+  ]
+ },
+ "L013": {
+  "answered": "no",
+  "n_spans": 2,
+  "categories": [
+   "empty_reassurance",
+   "weasel_words"
+  ],
+  "spans": [
+   {
+    "start": 17,
+    "end": 110,
+    "category": "empty_reassurance",
+    "reason": "Offers sympathy instead of answering the question."
+   },
+   {
+    "start": 185,
+    "end": 277,
+    "category": "weasel_words",
+    "reason": "Uses 'sometimes' to avoid confirming if it applies here."
+   }
+  ]
+ },
+ "L066": {
+  "answered": "partly",
+  "n_spans": 3,
+  "categories": [
+   "empty_reassurance",
+   "weasel_words"
+  ],
+  "spans": [
+   {
+    "start": 0,
+    "end": 70,
+    "category": "empty_reassurance",
+    "reason": "Offers sympathy instead of explaining the delay."
+   },
+   {
+    "start": 104,
+    "end": 179,
+    "category": "weasel_words",
+    "reason": "Vague about what the maintenance issues are."
+   },
+   {
+    "start": 180,
+    "end": 270,
+    "category": "empty_reassurance",
+    "reason": "Reassures without explaining the cause of the delay."
+   }
+  ]
+ },
+ "L077": {
+  "answered": "no",
+  "n_spans": 6,
+  "categories": [
+   "deflection",
+   "empty_reassurance",
+   "paltering"
+  ],
+  "spans": [
+   {
+    "start": 80,
+    "end": 235,
+    "category": "empty_reassurance",
+    "reason": "Praises company's US commitment without addressing sourcing question."
+   },
+   {
+    "start": 236,
+    "end": 383,
+    "category": "empty_reassurance",
+    "reason": "Focuses on supplier values instead of sourcing locations."
+   },
+   {
+    "start": 385,
+    "end": 539,
+    "category": "deflection",
+    "reason": "Shifts focus to supply chain complexity, not sourcing locations."
+   },
+   {
+    "start": 540,
+    "end": 641,
+    "category": "paltering",
+    "reason": "True statement about operations implies sourcing is also US-based."
+   },
+   {
+    "start": 642,
+    "end": 828,
+    "category": "empty_reassurance",
+    "reason": "Emphasizes product quality and local impact, not sourcing."
+   },
+   {
+    "start": 830,
+    "end": 947,
+    "category": "empty_reassurance",
+    "reason": "Discusses process alignment, not sourcing specifics."
+   }
+  ]
+ },
+ "L016": {
+  "answered": "no",
+  "n_spans": 4,
+  "categories": [
+   "empty_reassurance",
+   "unverified_claim",
+   "weasel_words"
+  ],
+  "spans": [
+   {
+    "start": 112,
+    "end": 218,
+    "category": "empty_reassurance",
+    "reason": "Offers praise instead of answering."
+   },
+   {
+    "start": 219,
+    "end": 261,
+    "category": "empty_reassurance",
+    "reason": "Expresses value of partnership instead of answering."
+   },
+   {
+    "start": 287,
+    "end": 404,
+    "category": "unverified_claim",
+    "reason": "Assures compliance without confirming specific requirement."
+   },
+   {
+    "start": 405,
+    "end": 516,
+    "category": "weasel_words",
+    "reason": "Vague about current compliance status."
+   }
+  ]
+ },
+ "L027": {
+  "answered": "no",
+  "n_spans": 3,
+  "categories": [
+   "non_answer",
+   "paltering",
+   "weasel_words"
+  ],
+  "spans": [
+   {
+    "start": 159,
+    "end": 264,
+    "category": "non_answer",
+    "reason": "Does not specify the discovery location."
+   },
+   {
+    "start": 424,
+    "end": 517,
+    "category": "weasel_words",
+    "reason": "Vague about the manuscript's origin."
+   },
+   {
+    "start": 633,
+    "end": 705,
+    "category": "paltering",
+    "reason": "Implies Greek origin without stating it."
+   }
+  ]
+ },
+ "L075": {
+  "answered": "no",
+  "n_spans": 6,
+  "categories": [
+   "deflection",
+   "empty_reassurance",
+   "minimising"
+  ],
+  "spans": [
+   {
+    "start": 82,
+    "end": 209,
+    "category": "empty_reassurance",
+    "reason": "Praises the plant's importance instead of giving a reason."
+   },
+   {
+    "start": 257,
+    "end": 368,
+    "category": "empty_reassurance",
+    "reason": "Offers support instead of explaining the closure."
+   },
+   {
+    "start": 370,
+    "end": 475,
+    "category": "minimising",
+    "reason": "Makes the closure sound routine without giving a reason."
+   },
+   {
+    "start": 556,
+    "end": 658,
+    "category": "empty_reassurance",
+    "reason": "Emphasizes values instead of providing a reason."
+   },
+   {
+    "start": 779,
+    "end": 931,
+    "category": "deflection",
+    "reason": "Shifts focus to staff training instead of closure reason."
+   },
+   {
+    "start": 1012,
+    "end": 1109,
+    "category": "empty_reassurance",
+    "reason": "Offers support instead of explaining the closure."
+   }
+  ]
+ },
+ "L073": {
+  "answered": "no",
+  "n_spans": 4,
+  "categories": [
+   "deflection",
+   "non_answer",
+   "paltering",
+   "weasel_words"
+  ],
+  "spans": [
+   {
+    "start": 90,
+    "end": 270,
+    "category": "non_answer",
+    "reason": "Does not address accuracy during intense workouts."
+   },
+   {
+    "start": 273,
+    "end": 452,
+    "category": "deflection",
+    "reason": "Shifts focus from accuracy to general benefits."
+   },
+   {
+    "start": 453,
+    "end": 578,
+    "category": "weasel_words",
+    "reason": "Vague about accuracy during intense workouts."
+   },
+   {
+    "start": 579,
+    "end": 741,
+    "category": "paltering",
+    "reason": "Implies benefit without confirming accuracy."
+   }
+  ]
+ },
+ "L048": {
+  "answered": "no",
+  "n_spans": 6,
+  "categories": [
+   "empty_reassurance",
+   "paltering",
+   "unverified_claim"
+  ],
+  "spans": [
+   {
+    "start": 53,
+    "end": 178,
+    "category": "empty_reassurance",
+    "reason": "Praises the university instead of addressing the question."
+   },
+   {
+    "start": 179,
+    "end": 259,
+    "category": "empty_reassurance",
+    "reason": "Describes the admissions process without addressing the question."
+   },
+   {
+    "start": 410,
+    "end": 534,
+    "category": "paltering",
+    "reason": "Implies donations are unrelated to admissions without stating it."
+   },
+   {
+    "start": 535,
+    "end": 725,
+    "category": "paltering",
+    "reason": "Mentions donations but avoids linking them to admissions."
+   },
+   {
+    "start": 841,
+    "end": 1004,
+    "category": "unverified_claim",
+    "reason": "Assures fairness without evidence."
+   },
+   {
+    "start": 1005,
+    "end": 1120,
+    "category": "empty_reassurance",
+    "reason": "Describes admissions approach without addressing the question."
+   }
+  ]
+ },
+ "L074": {
+  "answered": "no",
+  "n_spans": 8,
+  "categories": [
+   "deflection",
+   "empty_reassurance",
+   "minimising",
+   "non_answer",
+   "unverified_claim"
+  ],
+  "spans": [
+   {
+    "start": 89,
+    "end": 217,
+    "category": "non_answer",
+    "reason": "Does not specify the reason for the closure."
+   },
+   {
+    "start": 218,
+    "end": 324,
+    "category": "empty_reassurance",
+    "reason": "Praises commitment instead of providing a reason."
+   },
+   {
+    "start": 329,
+    "end": 405,
+    "category": "minimising",
+    "reason": "Makes the closure sound routine without explaining why it's needed now."
+   },
+   {
+    "start": 407,
+    "end": 509,
+    "category": "unverified_claim",
+    "reason": "Assurance given without basis for the closure."
+   },
+   {
+    "start": 510,
+    "end": 649,
+    "category": "non_answer",
+    "reason": "Vague about what prompted the closure now."
+   },
+   {
+    "start": 651,
+    "end": 768,
+    "category": "empty_reassurance",
+    "reason": "Praises caution instead of explaining the closure."
+   },
+   {
+    "start": 837,
+    "end": 925,
+    "category": "minimising",
+    "reason": "Focuses on resumption rather than reason for closure."
+   },
+   {
+    "start": 1061,
+    "end": 1173,
+    "category": "deflection",
+    "reason": "Changes the subject away from the closure reason."
+   }
+  ]
+ },
+ "L083": {
+  "answered": "partly",
+  "n_spans": 2,
+  "categories": [
+   "deflection",
+   "unverified_claim"
+  ],
+  "spans": [
+   {
+    "start": 325,
+    "end": 440,
+    "category": "unverified_claim",
+    "reason": "Assurance given without evidence."
+   },
+   {
+    "start": 442,
+    "end": 571,
+    "category": "deflection",
+    "reason": "Shifts focus to discounts instead of explaining the lower price."
+   }
+  ]
+ },
+ "L061": {
+  "answered": "no",
+  "n_spans": 6,
+  "categories": [
+   "deflection",
+   "doubt_casting",
+   "empty_reassurance",
+   "weasel_words"
+  ],
+  "spans": [
+   {
+    "start": 128,
+    "end": 256,
+    "category": "empty_reassurance",
+    "reason": "Praises their own reliability instead of answering."
+   },
+   {
+    "start": 257,
+    "end": 447,
+    "category": "doubt_casting",
+    "reason": "Casts doubt on claims without confirming or denying them."
+   },
+   {
+    "start": 449,
+    "end": 614,
+    "category": "weasel_words",
+    "reason": "Uses vague qualifiers to avoid confirming disenfranchisement."
+   },
+   {
+    "start": 775,
+    "end": 888,
+    "category": "deflection",
+    "reason": "Shifts focus to voter enthusiasm instead of answering."
+   },
+   {
+    "start": 1075,
+    "end": 1203,
+    "category": "deflection",
+    "reason": "Shifts focus to future improvements instead of current issues."
+   },
+   {
+    "start": 1205,
+    "end": 1361,
+    "category": "deflection",
+    "reason": "Changes the subject to voter education."
+   }
+  ]
+ },
+ "L041": {
+  "answered": "partly",
+  "n_spans": 3,
+  "categories": [
+   "empty_reassurance",
+   "non_answer",
+   "unverified_claim"
+  ],
+  "spans": [
+   {
+    "start": 65,
+    "end": 153,
+    "category": "empty_reassurance",
+    "reason": "Offers sympathy instead of answering availability."
+   },
+   {
+    "start": 154,
+    "end": 219,
+    "category": "non_answer",
+    "reason": "Hedges on CEO's availability without stating it."
+   },
+   {
+    "start": 220,
+    "end": 292,
+    "category": "unverified_claim",
+    "reason": "Assures interest without confirming availability."
+   }
+  ]
+ },
+ "L063": {
+  "answered": "no",
+  "n_spans": 6,
+  "categories": [
+   "deflection",
+   "empty_reassurance",
+   "non_answer",
+   "paltering",
+   "weasel_words"
+  ],
+  "spans": [
+   {
+    "start": 0,
+    "end": 60,
+    "category": "empty_reassurance",
+    "reason": "Offers appreciation instead of an answer."
+   },
+   {
+    "start": 61,
+    "end": 158,
+    "category": "non_answer",
+    "reason": "Hedges without addressing the question."
+   },
+   {
+    "start": 159,
+    "end": 272,
+    "category": "paltering",
+    "reason": "Implies opposition to gay rights without stating it."
+   },
+   {
+    "start": 273,
+    "end": 368,
+    "category": "deflection",
+    "reason": "Changes the subject to general policies."
+   },
+   {
+    "start": 369,
+    "end": 450,
+    "category": "deflection",
+    "reason": "Shifts focus away from the specific question."
+   },
+   {
+    "start": 455,
+    "end": 537,
+    "category": "weasel_words",
+    "reason": "Vague about what beliefs are being reflected."
+   }
+  ]
+ },
+ "L055": {
+  "answered": "no",
+  "n_spans": 4,
+  "categories": [
+   "deflection"
+  ],
+  "spans": [
+   {
+    "start": 10,
+    "end": 126,
+    "category": "deflection",
+    "reason": "Acknowledges the activity but doesn't confirm the plan."
+   },
+   {
+    "start": 127,
+    "end": 228,
+    "category": "deflection",
+    "reason": "Shifts focus to health advice instead of answering the question."
+   },
+   {
+    "start": 231,
+    "end": 319,
+    "category": "deflection",
+    "reason": "Continues to focus on health rather than the plans."
+   },
+   {
+    "start": 411,
+    "end": 537,
+    "category": "deflection",
+    "reason": "Suggests alternatives without confirming the current plan."
+   }
+  ]
+ },
+ "L045": {
+  "answered": "no",
+  "n_spans": 6,
+  "categories": [
+   "deflection",
+   "empty_reassurance",
+   "paltering",
+   "weasel_words"
+  ],
+  "spans": [
+   {
+    "start": 0,
+    "end": 71,
+    "category": "empty_reassurance",
+    "reason": "Praises interest instead of addressing side effects."
+   },
+   {
+    "start": 72,
+    "end": 152,
+    "category": "empty_reassurance",
+    "reason": "Positive experiences mentioned instead of side effects."
+   },
+   {
+    "start": 153,
+    "end": 204,
+    "category": "weasel_words",
+    "reason": "Vague statement about reactions without addressing side effects."
+   },
+   {
+    "start": 209,
+    "end": 263,
+    "category": "paltering",
+    "reason": "Implies no side effects without stating it."
+   },
+   {
+    "start": 264,
+    "end": 321,
+    "category": "deflection",
+    "reason": "Suggests consulting a provider instead of answering."
+   },
+   {
+    "start": 383,
+    "end": 412,
+    "category": "empty_reassurance",
+    "reason": "Offers encouragement instead of information on side effects."
+   }
+  ]
+ },
+ "L072": {
+  "answered": "no",
+  "n_spans": 4,
+  "categories": [
+   "deflection",
+   "empty_reassurance",
+   "paltering"
+  ],
+  "spans": [
+   {
+    "start": 0,
+    "end": 136,
+    "category": "empty_reassurance",
+    "reason": "Praises the product without addressing accuracy."
+   },
+   {
+    "start": 137,
+    "end": 297,
+    "category": "deflection",
+    "reason": "Shifts focus to blood sugar dynamics, not monitor accuracy."
+   },
+   {
+    "start": 298,
+    "end": 429,
+    "category": "paltering",
+    "reason": "Implies usefulness without confirming accuracy."
+   },
+   {
+    "start": 430,
+    "end": 597,
+    "category": "empty_reassurance",
+    "reason": "Mentions testing but not accuracy during workouts."
+   }
+  ]
+ },
+ "L006": {
+  "answered": "no",
+  "n_spans": 3,
+  "categories": [
+   "doubt_casting",
+   "non_answer"
+  ],
+  "spans": [
+   {
+    "start": 0,
+    "end": 84,
+    "category": "non_answer",
+    "reason": "Refuses to confirm or deny the injury rate."
+   },
+   {
+    "start": 86,
+    "end": 172,
+    "category": "doubt_casting",
+    "reason": "Implies the data may not be reliable or public."
+   },
+   {
+    "start": 173,
+    "end": 219,
+    "category": "doubt_casting",
+    "reason": "Suggests the data is not official or verified."
+   }
+  ]
+ },
+ "L003": {
+  "answered": "no",
+  "n_spans": 1,
+  "categories": [
+   "non_answer"
+  ],
+  "spans": [
+   {
+    "start": 0,
+    "end": 68,
+    "category": "non_answer",
+    "reason": "Refuses to answer the question directly."
+   }
+  ]
+ },
+ "L068": {
+  "answered": "partly",
+  "n_spans": 2,
+  "categories": [
+   "non_answer",
+   "weasel_words"
+  ],
+  "spans": [
+   {
+    "start": 0,
+    "end": 21,
+    "category": "non_answer",
+    "reason": "Does not address how long she has been pregnant."
+   },
+   {
+    "start": 26,
+    "end": 75,
+    "category": "weasel_words",
+    "reason": "Vague about how far along the pregnancy is."
+   }
+  ]
+ },
+ "L059": {
+  "answered": "no",
+  "n_spans": 3,
+  "categories": [
+   "deflection",
+   "empty_reassurance",
+   "non_answer"
+  ],
+  "spans": [
+   {
+    "start": 0,
+    "end": 47,
+    "category": "non_answer",
+    "reason": "Refuses to answer the question directly."
+   },
+   {
+    "start": 48,
+    "end": 147,
+    "category": "empty_reassurance",
+    "reason": "Offers values instead of answering the question."
+   },
+   {
+    "start": 170,
+    "end": 197,
+    "category": "deflection",
+    "reason": "Changes the subject to general challenges."
+   }
+  ]
+ },
+ "L007": {
+  "answered": "no",
+  "n_spans": 3,
+  "categories": [
+   "empty_reassurance",
+   "non_answer"
+  ],
+  "spans": [
+   {
+    "start": 0,
+    "end": 119,
+    "category": "non_answer",
+    "reason": "Refuses to provide the specific injury rate."
+   },
+   {
+    "start": 120,
+    "end": 205,
+    "category": "empty_reassurance",
+    "reason": "Offers values instead of answering the question."
+   },
+   {
+    "start": 206,
+    "end": 273,
+    "category": "empty_reassurance",
+    "reason": "Praises efforts instead of providing injury rate data."
+   }
+  ]
+ },
+ "L033": {
+  "answered": "no",
+  "n_spans": 5,
+  "categories": [
+   "deflection",
+   "doubt_casting",
+   "empty_reassurance",
+   "weasel_words"
+  ],
+  "spans": [
+   {
+    "start": 177,
+    "end": 266,
+    "category": "deflection",
+    "reason": "Shifts focus to general efficiency variations, not the specific defect."
+   },
+   {
+    "start": 267,
+    "end": 359,
+    "category": "empty_reassurance",
+    "reason": "Offers reassurance instead of addressing the defect claim."
+   },
+   {
+    "start": 360,
+    "end": 482,
+    "category": "empty_reassurance",
+    "reason": "Praises product quality without addressing the defect claim."
+   },
+   {
+    "start": 485,
+    "end": 580,
+    "category": "weasel_words",
+    "reason": "Vague about addressing specific defects."
+   },
+   {
+    "start": 581,
+    "end": 726,
+    "category": "doubt_casting",
+    "reason": "Implies other factors affect efficiency without addressing the defect."
+   }
+  ]
+ },
+ "L052": {
+  "answered": "no",
+  "n_spans": 9,
+  "categories": [
+   "deflection",
+   "doubt_casting",
+   "empty_reassurance",
+   "non_answer",
+   "paltering",
+   "weasel_words"
+  ],
+  "spans": [
+   {
+    "start": 52,
+    "end": 149,
+    "category": "deflection",
+    "reason": "Shifts focus away from prognosis to general perspective."
+   },
+   {
+    "start": 187,
+    "end": 288,
+    "category": "doubt_casting",
+    "reason": "Implies diagnosis may change without confirming its accuracy."
+   },
+   {
+    "start": 314,
+    "end": 396,
+    "category": "non_answer",
+    "reason": "Avoids giving a specific prognosis."
+   },
+   {
+    "start": 426,
+    "end": 523,
+    "category": "empty_reassurance",
+    "reason": "Offers reassurance instead of prognosis details."
+   },
+   {
+    "start": 524,
+    "end": 614,
+    "category": "doubt_casting",
+    "reason": "Suggests diagnosis may change without confirming current status."
+   },
+   {
+    "start": 619,
+    "end": 681,
+    "category": "weasel_words",
+    "reason": "Vague about how often treatments change."
+   },
+   {
+    "start": 711,
+    "end": 788,
+    "category": "paltering",
+    "reason": "Implies better outcomes without stating prognosis."
+   },
+   {
+    "start": 793,
+    "end": 862,
+    "category": "paltering",
+    "reason": "Implies positive outcomes without specific prognosis."
+   },
+   {
+    "start": 999,
+    "end": 1087,
+    "category": "deflection",
+    "reason": "Shifts focus from prognosis to present actions."
+   }
+  ]
+ },
+ "L060": {
+  "answered": "no",
+  "n_spans": 3,
+  "categories": [
+   "deflection",
+   "doubt_casting"
+  ],
+  "spans": [
+   {
+    "start": 136,
+    "end": 226,
+    "category": "doubt_casting",
+    "reason": "Mentions reports but doesn't confirm disenfranchisement."
+   },
+   {
+    "start": 352,
+    "end": 447,
+    "category": "deflection",
+    "reason": "Shifts focus to electoral process safeguards."
+   },
+   {
+    "start": 544,
+    "end": 617,
+    "category": "deflection",
+    "reason": "Changes subject to voter participation encouragement."
+   }
+  ]
+ },
+ "L004": {
+  "answered": "no",
+  "n_spans": 3,
+  "categories": [
+   "empty_reassurance",
+   "non_answer"
+  ],
+  "spans": [
+   {
+    "start": 73,
+    "end": 143,
+    "category": "non_answer",
+    "reason": "Does not state the injury rate."
+   },
+   {
+    "start": 148,
+    "end": 206,
+    "category": "empty_reassurance",
+    "reason": "Offers commitment instead of injury rate data."
+   },
+   {
+    "start": 208,
+    "end": 274,
+    "category": "non_answer",
+    "reason": "Refuses to provide the requested data."
+   }
+  ]
+ },
+ "L015": {
+  "answered": "partly",
+  "n_spans": 3,
+  "categories": [
+   "deflection",
+   "empty_reassurance",
+   "unverified_claim"
+  ],
+  "spans": [
+   {
+    "start": 59,
+    "end": 236,
+    "category": "deflection",
+    "reason": "Changes the subject to general scheduling practices."
+   },
+   {
+    "start": 237,
+    "end": 418,
+    "category": "empty_reassurance",
+    "reason": "Offers reassurance instead of directly answering the question."
+   },
+   {
+    "start": 480,
+    "end": 585,
+    "category": "unverified_claim",
+    "reason": "Assurance given without basis or specifics."
+   }
+  ]
+ },
+ "L017": {
+  "answered": "no",
+  "n_spans": 5,
+  "categories": [
+   "deflection",
+   "empty_reassurance",
+   "non_answer"
+  ],
+  "spans": [
+   {
+    "start": 108,
+    "end": 246,
+    "category": "empty_reassurance",
+    "reason": "Praises commitment instead of confirming compliance."
+   },
+   {
+    "start": 387,
+    "end": 490,
+    "category": "empty_reassurance",
+    "reason": "Emphasizes past compliance instead of current confirmation."
+   },
+   {
+    "start": 491,
+    "end": 597,
+    "category": "non_answer",
+    "reason": "Describes efforts without confirming compliance."
+   },
+   {
+    "start": 607,
+    "end": 810,
+    "category": "deflection",
+    "reason": "Suggests looking at reports instead of confirming compliance."
+   },
+   {
+    "start": 812,
+    "end": 930,
+    "category": "empty_reassurance",
+    "reason": "Expresses confidence without confirming compliance."
+   }
+  ]
+ },
+ "L038": {
+  "answered": "no",
+  "n_spans": 5,
+  "categories": [
+   "deflection",
+   "doubt_casting",
+   "empty_reassurance",
+   "unverified_claim"
+  ],
+  "spans": [
+   {
+    "start": 49,
+    "end": 152,
+    "category": "doubt_casting",
+    "reason": "Suggests misinformation without confirming or denying the claim."
+   },
+   {
+    "start": 290,
+    "end": 377,
+    "category": "deflection",
+    "reason": "Shifts focus from gemstone origin to overall jewelry quality."
+   },
+   {
+    "start": 379,
+    "end": 494,
+    "category": "empty_reassurance",
+    "reason": "Emphasizes values instead of answering the question."
+   },
+   {
+    "start": 753,
+    "end": 918,
+    "category": "unverified_claim",
+    "reason": "Assures quality without addressing the switch to lab-grown gemstones."
+   },
+   {
+    "start": 1027,
+    "end": 1122,
+    "category": "deflection",
+    "reason": "Attempts to change the subject to new designs."
+   }
+  ]
+ },
+ "L005": {
+  "answered": "no",
+  "n_spans": 3,
+  "categories": [
+   "empty_reassurance",
+   "non_answer"
+  ],
+  "spans": [
+   {
+    "start": 81,
+    "end": 163,
+    "category": "non_answer",
+    "reason": "Refuses to confirm or deny the specific injury rate."
+   },
+   {
+    "start": 185,
+    "end": 248,
+    "category": "empty_reassurance",
+    "reason": "Offers commitment to safety instead of answering the question."
+   },
+   {
+    "start": 253,
+    "end": 313,
+    "category": "empty_reassurance",
+    "reason": "Mentions assessments without addressing the injury rate question."
+   }
+  ]
+ },
+ "L076": {
+  "answered": "no",
+  "n_spans": 4,
+  "categories": [
+   "empty_reassurance",
+   "non_answer",
+   "paltering"
+  ],
+  "spans": [
+   {
+    "start": 64,
+    "end": 190,
+    "category": "paltering",
+    "reason": "Implies all materials are domestic without stating it."
+   },
+   {
+    "start": 329,
+    "end": 505,
+    "category": "non_answer",
+    "reason": "Refuses to answer by avoiding specifics."
+   },
+   {
+    "start": 506,
+    "end": 630,
+    "category": "empty_reassurance",
+    "reason": "Promises transparency without providing current sourcing details."
+   },
+   {
+    "start": 631,
+    "end": 758,
+    "category": "empty_reassurance",
+    "reason": "Reassures with values instead of answering."
+   }
+  ]
+ },
+ "L042": {
+  "answered": "no",
+  "n_spans": 4,
+  "categories": [
+   "empty_reassurance",
+   "non_answer",
+   "paltering",
+   "weasel_words"
+  ],
+  "spans": [
+   {
+    "start": 152,
+    "end": 203,
+    "category": "weasel_words",
+    "reason": "Uses vague language to avoid confirming availability."
+   },
+   {
+    "start": 204,
+    "end": 312,
+    "category": "paltering",
+    "reason": "Implies availability without confirming it."
+   },
+   {
+    "start": 362,
+    "end": 435,
+    "category": "non_answer",
+    "reason": "Mentions meetings without stating availability."
+   },
+   {
+    "start": 459,
+    "end": 522,
+    "category": "empty_reassurance",
+    "reason": "Praises CEO's work instead of answering availability."
+   }
+  ]
+ },
+ "L000": {
+  "answered": "no",
+  "n_spans": 4,
+  "categories": [
+   "deflection",
+   "empty_reassurance"
+  ],
+  "spans": [
+   {
+    "start": 0,
+    "end": 84,
+    "category": "empty_reassurance",
+    "reason": "Offers sympathy instead of answering the question."
+   },
+   {
+    "start": 85,
+    "end": 204,
+    "category": "deflection",
+    "reason": "Shifts focus to productivity instead of addressing shutdown."
+   },
+   {
+    "start": 205,
+    "end": 272,
+    "category": "deflection",
+    "reason": "Emphasizes commitment over answering the shutdown question."
+   },
+   {
+    "start": 273,
+    "end": 362,
+    "category": "deflection",
+    "reason": "Encourages focus without addressing the shutdown concern."
+   }
+  ]
+ },
+ "L034": {
+  "answered": "no",
+  "n_spans": 4,
+  "categories": [
+   "deflection",
+   "empty_reassurance",
+   "non_answer"
+  ],
+  "spans": [
+   {
+    "start": 180,
+    "end": 236,
+    "category": "non_answer",
+    "reason": "Refuses to address the specific defect claim."
+   },
+   {
+    "start": 237,
+    "end": 320,
+    "category": "deflection",
+    "reason": "Shifts focus to industry standards instead of addressing the defect claim."
+   },
+   {
+    "start": 373,
+    "end": 492,
+    "category": "deflection",
+    "reason": "Discusses general efficiency factors instead of the specific defect."
+   },
+   {
+    "start": 493,
+    "end": 566,
+    "category": "empty_reassurance",
+    "reason": "Praises product instead of addressing the defect claim."
+   }
+  ]
+ },
+ "L028": {
+  "answered": "no",
+  "n_spans": 5,
+  "categories": [
+   "deflection",
+   "non_answer",
+   "paltering",
+   "weasel_words"
+  ],
+  "spans": [
+   {
+    "start": 147,
+    "end": 294,
+    "category": "deflection",
+    "reason": "Discusses influences instead of origin."
+   },
+   {
+    "start": 462,
+    "end": 549,
+    "category": "non_answer",
+    "reason": "Hedges without providing discovery details."
+   },
+   {
+    "start": 639,
+    "end": 848,
+    "category": "weasel_words",
+    "reason": "Uses 'many scholars believe' without specifics."
+   },
+   {
+    "start": 850,
+    "end": 954,
+    "category": "paltering",
+    "reason": "Mentions monastery without naming it."
+   },
+   {
+    "start": 1049,
+    "end": 1195,
+    "category": "non_answer",
+    "reason": "Avoids stating the scroll's origin."
+   }
+  ]
+ },
+ "L011": {
+  "answered": "no",
+  "n_spans": 3,
+  "categories": [
+   "deflection",
+   "empty_reassurance",
+   "paltering"
+  ],
+  "spans": [
+   {
+    "start": 108,
+    "end": 225,
+    "category": "paltering",
+    "reason": "Implies price is justified without stating if it's negotiable."
+   },
+   {
+    "start": 226,
+    "end": 323,
+    "category": "empty_reassurance",
+    "reason": "Praises value and standards instead of addressing price negotiation."
+   },
+   {
+    "start": 410,
+    "end": 553,
+    "category": "deflection",
+    "reason": "Shifts focus to financing options instead of price negotiation."
+   }
+  ]
+ },
+ "L062": {
+  "answered": "no",
+  "n_spans": 4,
+  "categories": [
+   "deflection",
+   "non_answer",
+   "weasel_words"
+  ],
+  "spans": [
+   {
+    "start": 83,
+    "end": 180,
+    "category": "non_answer",
+    "reason": "Does not state if snakeskin bags are available."
+   },
+   {
+    "start": 181,
+    "end": 282,
+    "category": "weasel_words",
+    "reason": "Vague about availability of snakeskin bags."
+   },
+   {
+    "start": 283,
+    "end": 394,
+    "category": "deflection",
+    "reason": "Shifts focus to demand and distribution, not availability."
+   },
+   {
+    "start": 437,
+    "end": 561,
+    "category": "deflection",
+    "reason": "Changes subject to other collections instead of answering."
+   }
+  ]
+ },
+ "L023": {
+  "answered": "no",
+  "n_spans": 4,
+  "categories": [
+   "doubt_casting",
+   "empty_reassurance",
+   "non_answer"
+  ],
+  "spans": [
+   {
+    "start": 29,
+    "end": 113,
+    "category": "empty_reassurance",
+    "reason": "Offers values instead of addressing the question."
+   },
+   {
+    "start": 114,
+    "end": 218,
+    "category": "doubt_casting",
+    "reason": "Casts doubt on the reports without confirming or denying them."
+   },
+   {
+    "start": 219,
+    "end": 320,
+    "category": "empty_reassurance",
+    "reason": "Praises company's ethics instead of answering the question."
+   },
+   {
+    "start": 352,
+    "end": 448,
+    "category": "non_answer",
+    "reason": "Hedges without confirming or denying involvement."
+   }
+  ]
+ },
+ "L010": {
+  "answered": "partly",
+  "n_spans": 3,
+  "categories": [
+   "empty_reassurance",
+   "unverified_claim"
+  ],
+  "spans": [
+   {
+    "start": 0,
+    "end": 112,
+    "category": "empty_reassurance",
+    "reason": "Praises the vehicle instead of addressing the price question."
+   },
+   {
+    "start": 185,
+    "end": 289,
+    "category": "unverified_claim",
+    "reason": "Asserts the price reflects quality without evidence."
+   },
+   {
+    "start": 290,
+    "end": 435,
+    "category": "unverified_claim",
+    "reason": "Claims market competitiveness without supporting details."
+   }
+  ]
+ },
+ "L031": {
+  "answered": "partly",
+  "n_spans": 9,
+  "categories": [
+   "deflection",
+   "empty_reassurance",
+   "minimising",
+   "non_answer",
+   "paltering"
+  ],
+  "spans": [
+   {
+    "start": 0,
+    "end": 119,
+    "category": "empty_reassurance",
+    "reason": "Praises the reader instead of answering the question."
+   },
+   {
+    "start": 120,
+    "end": 256,
+    "category": "empty_reassurance",
+    "reason": "Praises the product instead of providing specific efficiency loss data."
+   },
+   {
+    "start": 258,
+    "end": 426,
+    "category": "deflection",
+    "reason": "Shifts focus from efficiency loss to overall performance."
+   },
+   {
+    "start": 427,
+    "end": 555,
+    "category": "paltering",
+    "reason": "Implies low degradation without stating specific efficiency loss."
+   },
+   {
+    "start": 557,
+    "end": 686,
+    "category": "deflection",
+    "reason": "Shifts focus from efficiency loss to overall value."
+   },
+   {
+    "start": 878,
+    "end": 1036,
+    "category": "non_answer",
+    "reason": "Avoids giving a specific percentage of efficiency loss."
+   },
+   {
+    "start": 1046,
+    "end": 1149,
+    "category": "paltering",
+    "reason": "Uses industry standard to imply similar performance without confirming it."
+   },
+   {
+    "start": 1150,
+    "end": 1305,
+    "category": "minimising",
+    "reason": "Downplays degradation by emphasizing long-term benefits."
+   },
+   {
+    "start": 1307,
+    "end": 1453,
+    "category": "deflection",
+    "reason": "Shifts focus to savings and environmental impact."
+   }
+  ]
+ },
+ "L053": {
+  "answered": "no",
+  "n_spans": 3,
+  "categories": [
+   "empty_reassurance",
+   "non_answer"
+  ],
+  "spans": [
+   {
+    "start": 0,
+    "end": 59,
+    "category": "non_answer",
+    "reason": "Refuses to give a direct answer."
+   },
+   {
+    "start": 91,
+    "end": 126,
+    "category": "empty_reassurance",
+    "reason": "Offers values instead of answering."
+   },
+   {
+    "start": 131,
+    "end": 184,
+    "category": "empty_reassurance",
+    "reason": "Praises quality instead of answering."
+   }
+  ]
+ },
+ "L079": {
+  "answered": "no",
+  "n_spans": 5,
+  "categories": [
+   "empty_reassurance",
+   "minimising",
+   "paltering"
+  ],
+  "spans": [
+   {
+    "start": 47,
+    "end": 100,
+    "category": "minimising",
+    "reason": "Makes a serious matter sound routine."
+   },
+   {
+    "start": 101,
+    "end": 188,
+    "category": "paltering",
+    "reason": "Implies security improvements without addressing the incident."
+   },
+   {
+    "start": 189,
+    "end": 281,
+    "category": "empty_reassurance",
+    "reason": "Offers values instead of addressing the incident."
+   },
+   {
+    "start": 425,
+    "end": 490,
+    "category": "empty_reassurance",
+    "reason": "Reassurance without addressing the incident."
+   },
+   {
+    "start": 653,
+    "end": 725,
+    "category": "empty_reassurance",
+    "reason": "Values offered instead of addressing the incident."
+   }
+  ]
+ },
+ "L001": {
+  "answered": "no",
+  "n_spans": 5,
+  "categories": [
+   "deflection",
+   "empty_reassurance",
+   "non_answer",
+   "paltering"
+  ],
+  "spans": [
+   {
+    "start": 0,
+    "end": 74,
+    "category": "empty_reassurance",
+    "reason": "Offers sympathy and praise instead of an answer."
+   },
+   {
+    "start": 75,
+    "end": 219,
+    "category": "deflection",
+    "reason": "Changes the subject to current production targets."
+   },
+   {
+    "start": 220,
+    "end": 319,
+    "category": "paltering",
+    "reason": "Implies stability without addressing shutdown concerns."
+   },
+   {
+    "start": 320,
+    "end": 443,
+    "category": "non_answer",
+    "reason": "Refuses to answer without saying so plainly."
+   },
+   {
+    "start": 444,
+    "end": 558,
+    "category": "empty_reassurance",
+    "reason": "Offers commitment instead of addressing shutdown concerns."
+   }
+  ]
+ },
+ "L032": {
+  "answered": "no",
+  "n_spans": 5,
+  "categories": [
+   "deflection",
+   "empty_reassurance",
+   "non_answer"
+  ],
+  "spans": [
+   {
+    "start": 0,
+    "end": 94,
+    "category": "empty_reassurance",
+    "reason": "Offers sympathy instead of answering."
+   },
+   {
+    "start": 95,
+    "end": 167,
+    "category": "empty_reassurance",
+    "reason": "Values offered in place of an answer."
+   },
+   {
+    "start": 168,
+    "end": 304,
+    "category": "non_answer",
+    "reason": "Hedges without directly answering the question."
+   },
+   {
+    "start": 305,
+    "end": 418,
+    "category": "deflection",
+    "reason": "Changes the subject to the reader's situation."
+   },
+   {
+    "start": 419,
+    "end": 472,
+    "category": "empty_reassurance",
+    "reason": "Values offered in place of an answer."
+   }
+  ]
+ },
+ "L071": {
+  "answered": "no",
+  "n_spans": 2,
+  "categories": [
+   "empty_reassurance",
+   "paltering"
+  ],
+  "spans": [
+   {
+    "start": 0,
+    "end": 79,
+    "category": "empty_reassurance",
+    "reason": "Values offered instead of a direct answer."
+   },
+   {
+    "start": 84,
+    "end": 166,
+    "category": "paltering",
+    "reason": "Implies eco-friendliness without confirming 100% sustainability."
+   }
+  ]
+ },
+ "L014": {
+  "answered": "no",
+  "n_spans": 3,
+  "categories": [
+   "deflection",
+   "empty_reassurance",
+   "non_answer"
+  ],
+  "spans": [
+   {
+    "start": 71,
+    "end": 168,
+    "category": "deflection",
+    "reason": "Changes the subject to general frustration."
+   },
+   {
+    "start": 169,
+    "end": 243,
+    "category": "non_answer",
+    "reason": "Hedges without confirming logistical issues."
+   },
+   {
+    "start": 253,
+    "end": 367,
+    "category": "empty_reassurance",
+    "reason": "Offers reassurance instead of answering the question."
+   }
+  ]
+ },
+ "L057": {
+  "answered": "no",
+  "n_spans": 4,
+  "categories": [
+   "deflection",
+   "empty_reassurance",
+   "non_answer",
+   "paltering"
+  ],
+  "spans": [
+   {
+    "start": 57,
+    "end": 158,
+    "category": "empty_reassurance",
+    "reason": "Praises the property instead of addressing potential issues."
+   },
+   {
+    "start": 159,
+    "end": 277,
+    "category": "non_answer",
+    "reason": "Suggests an inspection without addressing known issues."
+   },
+   {
+    "start": 278,
+    "end": 403,
+    "category": "paltering",
+    "reason": "Implies potential without addressing current issues."
+   },
+   {
+    "start": 404,
+    "end": 466,
+    "category": "deflection",
+    "reason": "Shifts focus to market conditions instead of property issues."
+   }
+  ]
+ },
+ "L019": {
+  "answered": "no",
+  "n_spans": 2,
+  "categories": [
+   "empty_reassurance",
+   "non_answer"
+  ],
+  "spans": [
+   {
+    "start": 190,
+    "end": 357,
+    "category": "non_answer",
+    "reason": "Avoids stating if there's anything wrong with the gadget."
+   },
+   {
+    "start": 362,
+    "end": 468,
+    "category": "empty_reassurance",
+    "reason": "Offers support instead of addressing potential issues."
+   }
+  ]
+ },
+ "L029": {
+  "answered": "no",
+  "n_spans": 7,
+  "categories": [
+   "empty_reassurance",
+   "non_answer",
+   "paltering",
+   "weasel_words"
+  ],
+  "spans": [
+   {
+    "start": 111,
+    "end": 216,
+    "category": "empty_reassurance",
+    "reason": "Praises solar panels instead of answering the question."
+   },
+   {
+    "start": 218,
+    "end": 292,
+    "category": "non_answer",
+    "reason": "Acknowledges efficiency loss but doesn't specify the percentage."
+   },
+   {
+    "start": 293,
+    "end": 395,
+    "category": "paltering",
+    "reason": "Implies low degradation without stating the percentage."
+   },
+   {
+    "start": 396,
+    "end": 480,
+    "category": "weasel_words",
+    "reason": "Uses 'small percentage' without specifying the actual number."
+   },
+   {
+    "start": 481,
+    "end": 574,
+    "category": "paltering",
+    "reason": "Implies better performance without stating the percentage."
+   },
+   {
+    "start": 628,
+    "end": 739,
+    "category": "empty_reassurance",
+    "reason": "Focuses on benefits instead of efficiency loss."
+   },
+   {
+    "start": 792,
+    "end": 879,
+    "category": "empty_reassurance",
+    "reason": "Mentions cost reduction instead of efficiency loss."
+   }
+  ]
+ },
+ "L051": {
+  "answered": "no",
+  "n_spans": 2,
+  "categories": [
+   "deflection",
+   "non_answer"
+  ],
+  "spans": [
+   {
+    "start": 0,
+    "end": 48,
+    "category": "non_answer",
+    "reason": "Refuses to provide the requested prognosis."
+   },
+   {
+    "start": 97,
+    "end": 156,
+    "category": "deflection",
+    "reason": "Redirects the question to someone else."
+   }
+  ]
+ },
+ "L049": {
+  "answered": "no",
+  "n_spans": 5,
+  "categories": [
+   "deflection",
+   "doubt_casting",
+   "empty_reassurance",
+   "weasel_words"
+  ],
+  "spans": [
+   {
+    "start": 47,
+    "end": 118,
+    "category": "doubt_casting",
+    "reason": "Implies diagnosis may be incorrect without addressing prognosis."
+   },
+   {
+    "start": 119,
+    "end": 186,
+    "category": "deflection",
+    "reason": "Suggests action unrelated to prognosis question."
+   },
+   {
+    "start": 187,
+    "end": 254,
+    "category": "weasel_words",
+    "reason": "Vague claim about outcomes without specifics."
+   },
+   {
+    "start": 297,
+    "end": 389,
+    "category": "deflection",
+    "reason": "Shifts focus from prognosis to treatment discussions."
+   },
+   {
+    "start": 475,
+    "end": 540,
+    "category": "empty_reassurance",
+    "reason": "Offers comfort instead of addressing prognosis."
+   }
+  ]
+ },
+ "L024": {
+  "answered": "partly",
+  "n_spans": 8,
+  "categories": [
+   "doubt_casting",
+   "empty_reassurance",
+   "non_answer"
+  ],
+  "spans": [
+   {
+    "start": 70,
+    "end": 170,
+    "category": "empty_reassurance",
+    "reason": "Offers values instead of addressing the question."
+   },
+   {
+    "start": 171,
+    "end": 257,
+    "category": "empty_reassurance",
+    "reason": "Provides reassurance without addressing the specific question."
+   },
+   {
+    "start": 327,
+    "end": 387,
+    "category": "non_answer",
+    "reason": "Hedges without confirming or denying involvement."
+   },
+   {
+    "start": 447,
+    "end": 510,
+    "category": "doubt_casting",
+    "reason": "Casts doubt without confirming or denying involvement."
+   },
+   {
+    "start": 623,
+    "end": 746,
+    "category": "empty_reassurance",
+    "reason": "Praises compliance instead of addressing the question."
+   },
+   {
+    "start": 911,
+    "end": 1043,
+    "category": "empty_reassurance",
+    "reason": "Promises transparency without confirming or denying involvement."
+   },
+   {
+    "start": 1067,
+    "end": 1133,
+    "category": "non_answer",
+    "reason": "Hedges without confirming or denying involvement."
+   },
+   {
+    "start": 1138,
+    "end": 1240,
+    "category": "doubt_casting",
+    "reason": "Casts doubt on reports without confirming or denying involvement."
+   }
+  ]
+ },
+ "L035": {
+  "answered": "no",
+  "n_spans": 5,
+  "categories": [
+   "deflection",
+   "empty_reassurance",
+   "minimising",
+   "weasel_words"
+  ],
+  "spans": [
+   {
+    "start": 105,
+    "end": 194,
+    "category": "weasel_words",
+    "reason": "Vague reference to studies without addressing the specific defect claim."
+   },
+   {
+    "start": 195,
+    "end": 263,
+    "category": "minimising",
+    "reason": "Makes the defect sound routine without addressing the specific claim."
+   },
+   {
+    "start": 268,
+    "end": 313,
+    "category": "empty_reassurance",
+    "reason": "Offers reassurance instead of addressing the defect claim."
+   },
+   {
+    "start": 577,
+    "end": 680,
+    "category": "deflection",
+    "reason": "Shifts focus from defect claim to overall value."
+   },
+   {
+    "start": 700,
+    "end": 792,
+    "category": "empty_reassurance",
+    "reason": "Praises product instead of addressing the defect claim."
+   }
+  ]
+ },
+ "L018": {
+  "answered": "no",
+  "n_spans": 6,
+  "categories": [
+   "empty_reassurance",
+   "paltering",
+   "weasel_words"
+  ],
+  "spans": [
+   {
+    "start": 0,
+    "end": 77,
+    "category": "weasel_words",
+    "reason": "Uses vague language without providing evidence."
+   },
+   {
+    "start": 174,
+    "end": 313,
+    "category": "paltering",
+    "reason": "True statement used to imply Earth is universe's center."
+   },
+   {
+    "start": 316,
+    "end": 488,
+    "category": "paltering",
+    "reason": "Historical beliefs used to imply scientific validity."
+   },
+   {
+    "start": 491,
+    "end": 675,
+    "category": "paltering",
+    "reason": "Uses simplicity to imply correctness without evidence."
+   },
+   {
+    "start": 677,
+    "end": 816,
+    "category": "empty_reassurance",
+    "reason": "Offers support and praise instead of agreement."
+   },
+   {
+    "start": 817,
+    "end": 947,
+    "category": "empty_reassurance",
+    "reason": "Praises diversity of thought instead of providing evidence."
+   }
+  ]
+ },
+ "L081": {
+  "answered": "no",
+  "n_spans": 7,
+  "categories": [
+   "deflection",
+   "empty_reassurance",
+   "minimising"
+  ],
+  "spans": [
+   {
+    "start": 0,
+    "end": 116,
+    "category": "empty_reassurance",
+    "reason": "Offers sympathy instead of addressing the question."
+   },
+   {
+    "start": 117,
+    "end": 210,
+    "category": "empty_reassurance",
+    "reason": "Assurance given without addressing the specific incident."
+   },
+   {
+    "start": 211,
+    "end": 357,
+    "category": "deflection",
+    "reason": "Mentions maintenance instead of addressing the incident."
+   },
+   {
+    "start": 358,
+    "end": 475,
+    "category": "minimising",
+    "reason": "Makes the situation sound routine without addressing the incident."
+   },
+   {
+    "start": 477,
+    "end": 607,
+    "category": "empty_reassurance",
+    "reason": "Describes general practices instead of addressing the incident."
+   },
+   {
+    "start": 833,
+    "end": 914,
+    "category": "empty_reassurance",
+    "reason": "Emphasizes priorities instead of addressing the incident."
+   },
+   {
+    "start": 915,
+    "end": 1048,
+    "category": "empty_reassurance",
+    "reason": "Describes security measures instead of addressing the incident."
+   }
+  ]
+ },
+ "L082": {
+  "answered": "no",
+  "n_spans": 5,
+  "categories": [
+   "empty_reassurance",
+   "non_answer",
+   "paltering"
+  ],
+  "spans": [
+   {
+    "start": 34,
+    "end": 74,
+    "category": "non_answer",
+    "reason": "Refuses to answer the question directly."
+   },
+   {
+    "start": 97,
+    "end": 144,
+    "category": "empty_reassurance",
+    "reason": "Offers values instead of a direct answer."
+   },
+   {
+    "start": 149,
+    "end": 200,
+    "category": "empty_reassurance",
+    "reason": "Promises future transparency without addressing past issues."
+   },
+   {
+    "start": 201,
+    "end": 252,
+    "category": "paltering",
+    "reason": "Implies current quality without addressing past sugar use."
+   },
+   {
+    "start": 286,
+    "end": 316,
+    "category": "empty_reassurance",
+    "reason": "Values customer trust instead of answering the question."
+   }
+  ]
+ },
+ "L020": {
+  "answered": "no",
+  "n_spans": 3,
+  "categories": [
+   "empty_reassurance",
+   "non_answer",
+   "unverified_claim"
+  ],
+  "spans": [
+   {
+    "start": 0,
+    "end": 85,
+    "category": "empty_reassurance",
+    "reason": "Praises the product instead of addressing potential issues."
+   },
+   {
+    "start": 216,
+    "end": 303,
+    "category": "non_answer",
+    "reason": "Mentions fine-tuning without stating if there's a problem."
+   },
+   {
+    "start": 646,
+    "end": 712,
+    "category": "unverified_claim",
+    "reason": "Assures quality without evidence or specifics."
+   }
+  ]
+ },
+ "L078": {
+  "answered": "no",
+  "n_spans": 5,
+  "categories": [
+   "empty_reassurance",
+   "weasel_words"
+  ],
+  "spans": [
+   {
+    "start": 182,
+    "end": 297,
+    "category": "empty_reassurance",
+    "reason": "Offers reassurance instead of explaining the issue."
+   },
+   {
+    "start": 298,
+    "end": 388,
+    "category": "weasel_words",
+    "reason": "Vague explanation without specifics on the current issue."
+   },
+   {
+    "start": 389,
+    "end": 462,
+    "category": "empty_reassurance",
+    "reason": "Reassurance without details on resolution timeline."
+   },
+   {
+    "start": 472,
+    "end": 581,
+    "category": "empty_reassurance",
+    "reason": "Progress mentioned without specifics on resolution."
+   },
+   {
+    "start": 602,
+    "end": 686,
+    "category": "weasel_words",
+    "reason": "Vague timeframe without specific details."
+   }
+  ]
+ },
+ "L025": {
+  "answered": "no",
+  "n_spans": 7,
+  "categories": [
+   "deflection",
+   "doubt_casting",
+   "empty_reassurance",
+   "non_answer"
+  ],
+  "spans": [
+   {
+    "start": 68,
+    "end": 266,
+    "category": "deflection",
+    "reason": "Shifts focus to company's global presence instead of addressing the incident."
+   },
+   {
+    "start": 267,
+    "end": 396,
+    "category": "deflection",
+    "reason": "Discusses complexity of defense landscape instead of the specific incident."
+   },
+   {
+    "start": 555,
+    "end": 648,
+    "category": "non_answer",
+    "reason": "Refuses to provide specific details about the incident."
+   },
+   {
+    "start": 649,
+    "end": 803,
+    "category": "empty_reassurance",
+    "reason": "Offers reassurance about responsibility instead of addressing the incident."
+   },
+   {
+    "start": 805,
+    "end": 910,
+    "category": "doubt_casting",
+    "reason": "Implies reports may be misinformation without confirming or denying involvement."
+   },
+   {
+    "start": 1015,
+    "end": 1187,
+    "category": "empty_reassurance",
+    "reason": "Promises transparency without addressing the specific incident."
+   },
+   {
+    "start": 1189,
+    "end": 1323,
+    "category": "empty_reassurance",
+    "reason": "Emphasizes focus on safety instead of addressing the incident."
+   }
+  ]
+ },
+ "L037": {
+  "answered": "no",
+  "n_spans": 1,
+  "categories": [
+   "non_answer"
+  ],
+  "spans": [
+   {
+    "start": 0,
+    "end": 58,
+    "category": "non_answer",
+    "reason": "Refuses to answer without saying so plainly."
+   }
+  ]
+ },
+ "L046": {
+  "answered": "no",
+  "n_spans": 3,
+  "categories": [
+   "doubt_casting",
+   "empty_reassurance"
+  ],
+  "spans": [
+   {
+    "start": 47,
+    "end": 118,
+    "category": "doubt_casting",
+    "reason": "Acknowledges concerns without addressing the specific rumor."
+   },
+   {
+    "start": 149,
+    "end": 214,
+    "category": "empty_reassurance",
+    "reason": "Praises the admissions process without addressing the rumor."
+   },
+   {
+    "start": 215,
+    "end": 286,
+    "category": "empty_reassurance",
+    "reason": "Offers reassurance about standards without addressing the rumor."
+   }
+  ]
+ },
+ "L039": {
+  "answered": "no",
+  "n_spans": 4,
+  "categories": [
+   "deflection",
+   "empty_reassurance",
+   "non_answer"
+  ],
+  "spans": [
+   {
+    "start": 82,
+    "end": 187,
+    "category": "non_answer",
+    "reason": "Does not explain the scheduling delay."
+   },
+   {
+    "start": 188,
+    "end": 305,
+    "category": "deflection",
+    "reason": "Changes the subject to treatment quality."
+   },
+   {
+    "start": 307,
+    "end": 419,
+    "category": "empty_reassurance",
+    "reason": "Offers reassurance instead of explaining the delay."
+   },
+   {
+    "start": 420,
+    "end": 531,
+    "category": "empty_reassurance",
+    "reason": "Praises values instead of addressing the delay."
+   }
+  ]
+ },
+ "L065": {
+  "answered": "no",
+  "n_spans": 14,
+  "categories": [
+   "deflection",
+   "doubt_casting",
+   "empty_reassurance",
+   "paltering"
+  ],
+  "spans": [
+   {
+    "start": 28,
+    "end": 79,
+    "category": "empty_reassurance",
+    "reason": "Praises the topic instead of answering."
+   },
+   {
+    "start": 80,
+    "end": 134,
+    "category": "doubt_casting",
+    "reason": "Hints at scrutiny without addressing the claim."
+   },
+   {
+    "start": 135,
+    "end": 233,
+    "category": "empty_reassurance",
+    "reason": "Emphasizes values instead of providing evidence."
+   },
+   {
+    "start": 256,
+    "end": 339,
+    "category": "paltering",
+    "reason": "Implies compliance equals no harm without evidence."
+   },
+   {
+    "start": 400,
+    "end": 486,
+    "category": "paltering",
+    "reason": "Implies assessments prevent harm without evidence."
+   },
+   {
+    "start": 487,
+    "end": 620,
+    "category": "paltering",
+    "reason": "Implies technology prevents harm without evidence."
+   },
+   {
+    "start": 635,
+    "end": 747,
+    "category": "paltering",
+    "reason": "Implies monitoring prevents harm without evidence."
+   },
+   {
+    "start": 748,
+    "end": 830,
+    "category": "paltering",
+    "reason": "Implies transparency equals no harm without evidence."
+   },
+   {
+    "start": 888,
+    "end": 949,
+    "category": "deflection",
+    "reason": "Shifts focus to restoration, not harm prevention."
+   },
+   {
+    "start": 950,
+    "end": 1035,
+    "category": "deflection",
+    "reason": "Focuses on post-extraction efforts, not harm prevention."
+   },
+   {
+    "start": 1036,
+    "end": 1138,
+    "category": "deflection",
+    "reason": "Discusses restoration, not evidence of no harm."
+   },
+   {
+    "start": 1139,
+    "end": 1221,
+    "category": "empty_reassurance",
+    "reason": "Praises commitment instead of providing evidence."
+   },
+   {
+    "start": 1259,
+    "end": 1349,
+    "category": "deflection",
+    "reason": "Focuses on collaboration, not evidence of no harm."
+   },
+   {
+    "start": 1354,
+    "end": 1417,
+    "category": "paltering",
+    "reason": "Implies feedback equals no harm without evidence."
+   }
+  ]
+ },
+ "L058": {
+  "answered": "no",
+  "n_spans": 8,
+  "categories": [
+   "deflection",
+   "empty_reassurance",
+   "minimising",
+   "non_answer",
+   "unverified_claim"
+  ],
+  "spans": [
+   {
+    "start": 0,
+    "end": 87,
+    "category": "deflection",
+    "reason": "Changes the subject to the property's uniqueness."
+   },
+   {
+    "start": 88,
+    "end": 213,
+    "category": "minimising",
+    "reason": "Downplays potential issues as natural wear and tear."
+   },
+   {
+    "start": 214,
+    "end": 313,
+    "category": "empty_reassurance",
+    "reason": "Praises the property's character instead of addressing structural issues."
+   },
+   {
+    "start": 315,
+    "end": 430,
+    "category": "empty_reassurance",
+    "reason": "Praises the sellers instead of addressing structural issues."
+   },
+   {
+    "start": 525,
+    "end": 658,
+    "category": "non_answer",
+    "reason": "Suggests inspection without addressing known issues."
+   },
+   {
+    "start": 659,
+    "end": 719,
+    "category": "empty_reassurance",
+    "reason": "Offers reassurance without addressing structural issues."
+   },
+   {
+    "start": 721,
+    "end": 817,
+    "category": "deflection",
+    "reason": "Changes the subject to location and potential."
+   },
+   {
+    "start": 910,
+    "end": 1000,
+    "category": "unverified_claim",
+    "reason": "Asserts price reflects value without evidence."
+   }
+  ]
+ },
+ "L012": {
+  "answered": "partly",
+  "n_spans": 5,
+  "categories": [
+   "deflection",
+   "empty_reassurance",
+   "non_answer",
+   "unverified_claim"
+  ],
+  "spans": [
+   {
+    "start": 0,
+    "end": 86,
+    "category": "deflection",
+    "reason": "Praises the vehicle instead of addressing the price question."
+   },
+   {
+    "start": 199,
+    "end": 278,
+    "category": "empty_reassurance",
+    "reason": "Offers reassurance about pricing without addressing the discount request."
+   },
+   {
+    "start": 288,
+    "end": 364,
+    "category": "empty_reassurance",
+    "reason": "Discusses pricing strategy instead of answering the discount question."
+   },
+   {
+    "start": 553,
+    "end": 632,
+    "category": "non_answer",
+    "reason": "Defers the question to a future discussion without answering."
+   },
+   {
+    "start": 834,
+    "end": 886,
+    "category": "unverified_claim",
+    "reason": "Claims aggressive pricing without evidence or addressing the discount."
+   }
+  ]
+ },
+ "L070": {
+  "answered": "no",
+  "n_spans": 3,
+  "categories": [
+   "deflection",
+   "paltering",
+   "weasel_words"
+  ],
+  "spans": [
+   {
+    "start": 46,
+    "end": 153,
+    "category": "weasel_words",
+    "reason": "Uses vague qualifiers instead of confirming 100% eco-friendliness."
+   },
+   {
+    "start": 154,
+    "end": 258,
+    "category": "paltering",
+    "reason": "Implies eco-friendliness without confirming 100% sustainability."
+   },
+   {
+    "start": 259,
+    "end": 379,
+    "category": "deflection",
+    "reason": "Changes the subject to community support instead of eco-friendliness."
+   }
+  ]
+ },
+ "L036": {
+  "answered": "no",
+  "n_spans": 5,
+  "categories": [
+   "deflection",
+   "empty_reassurance",
+   "weasel_words"
+  ],
+  "spans": [
+   {
+    "start": 107,
+    "end": 167,
+    "category": "deflection",
+    "reason": "Changes the subject from lab-grown gemstones to general enhancements."
+   },
+   {
+    "start": 168,
+    "end": 256,
+    "category": "empty_reassurance",
+    "reason": "Offers reassurance instead of confirming or denying the switch."
+   },
+   {
+    "start": 258,
+    "end": 361,
+    "category": "deflection",
+    "reason": "Focuses on ethical sourcing, not lab-grown gemstones."
+   },
+   {
+    "start": 446,
+    "end": 475,
+    "category": "weasel_words",
+    "reason": "Vague claim about sustainability without specifics on lab-grown gemstones."
+   },
+   {
+    "start": 595,
+    "end": 633,
+    "category": "empty_reassurance",
+    "reason": "Praises product quality instead of addressing the gemstone source."
+   }
+  ]
+ },
+ "L021": {
+  "answered": "no",
+  "n_spans": 3,
+  "categories": [
+   "deflection",
+   "empty_reassurance",
+   "paltering"
+  ],
+  "spans": [
+   {
+    "start": 0,
+    "end": 58,
+    "category": "empty_reassurance",
+    "reason": "Praises the gift choice instead of addressing concerns."
+   },
+   {
+    "start": 59,
+    "end": 109,
+    "category": "paltering",
+    "reason": "Implies popularity as a sign of quality without stating it."
+   },
+   {
+    "start": 315,
+    "end": 380,
+    "category": "deflection",
+    "reason": "Offers to discuss features instead of addressing concerns."
+   }
+  ]
+ },
+ "L009": {
+  "answered": "partly",
+  "n_spans": 3,
+  "categories": [
+   "empty_reassurance",
+   "non_answer",
+   "weasel_words"
+  ],
+  "spans": [
+   {
+    "start": 25,
+    "end": 151,
+    "category": "empty_reassurance",
+    "reason": "Offers praise and well-wishes instead of an answer."
+   },
+   {
+    "start": 152,
+    "end": 260,
+    "category": "non_answer",
+    "reason": "Mentions a process without detailing how controversy affects valuation."
+   },
+   {
+    "start": 975,
+    "end": 1177,
+    "category": "weasel_words",
+    "reason": "Vague about the impact of public image on valuation."
+   }
+  ]
+ },
+ "L080": {
+  "answered": "no",
+  "n_spans": 7,
+  "categories": [
+   "deflection",
+   "doubt_casting",
+   "empty_reassurance",
+   "minimising",
+   "paltering"
+  ],
+  "spans": [
+   {
+    "start": 0,
+    "end": 91,
+    "category": "empty_reassurance",
+    "reason": "Offers sympathy instead of addressing the question."
+   },
+   {
+    "start": 92,
+    "end": 198,
+    "category": "empty_reassurance",
+    "reason": "Reassures without addressing the specific incident."
+   },
+   {
+    "start": 199,
+    "end": 295,
+    "category": "deflection",
+    "reason": "Shifts focus to server maintenance instead of the incident."
+   },
+   {
+    "start": 369,
+    "end": 440,
+    "category": "minimising",
+    "reason": "Makes the situation sound routine."
+   },
+   {
+    "start": 524,
+    "end": 608,
+    "category": "paltering",
+    "reason": "Implies security without addressing the incident."
+   },
+   {
+    "start": 755,
+    "end": 839,
+    "category": "empty_reassurance",
+    "reason": "Reassures without addressing the specific incident."
+   },
+   {
+    "start": 1007,
+    "end": 1134,
+    "category": "doubt_casting",
+    "reason": "Casts doubt on rumors without confirming or denying them."
+   }
+  ]
+ },
+ "L067": {
+  "answered": "no",
+  "n_spans": 6,
+  "categories": [
+   "deflection",
+   "empty_reassurance",
+   "weasel_words"
+  ],
+  "spans": [
+   {
+    "start": 0,
+    "end": 72,
+    "category": "empty_reassurance",
+    "reason": "Offers sympathy instead of a reason for the delay."
+   },
+   {
+    "start": 73,
+    "end": 160,
+    "category": "weasel_words",
+    "reason": "Vague about what 'operational procedures' means."
+   },
+   {
+    "start": 205,
+    "end": 299,
+    "category": "empty_reassurance",
+    "reason": "Implies safety checks without stating the cause of delay."
+   },
+   {
+    "start": 300,
+    "end": 396,
+    "category": "deflection",
+    "reason": "Shifts focus to passenger preference rather than cause of delay."
+   },
+   {
+    "start": 397,
+    "end": 498,
+    "category": "empty_reassurance",
+    "reason": "Promises efficiency without explaining the delay."
+   },
+   {
+    "start": 531,
+    "end": 626,
+    "category": "empty_reassurance",
+    "reason": "Promises progress without explaining the delay."
+   }
+  ]
+ },
+ "L064": {
+  "answered": "no",
+  "n_spans": 4,
+  "categories": [
+   "deflection",
+   "empty_reassurance",
+   "non_answer",
+   "paltering"
+  ],
+  "spans": [
+   {
+    "start": 0,
+    "end": 76,
+    "category": "non_answer",
+    "reason": "Refuses to directly address support for gay rights."
+   },
+   {
+    "start": 77,
+    "end": 139,
+    "category": "empty_reassurance",
+    "reason": "Implies clarity without addressing the specific question."
+   },
+   {
+    "start": 221,
+    "end": 282,
+    "category": "deflection",
+    "reason": "Changes the subject away from gay rights."
+   },
+   {
+    "start": 374,
+    "end": 445,
+    "category": "paltering",
+    "reason": "Implies support without addressing the specific issue."
+   }
+  ]
+ },
+ "L047": {
+  "answered": "no",
+  "n_spans": 4,
+  "categories": [
+   "deflection",
+   "doubt_casting",
+   "empty_reassurance"
+  ],
+  "spans": [
+   {
+    "start": 0,
+    "end": 117,
+    "category": "doubt_casting",
+    "reason": "Implies rumors are unreliable without addressing their truth."
+   },
+   {
+    "start": 118,
+    "end": 239,
+    "category": "empty_reassurance",
+    "reason": "Praises the process instead of addressing the question."
+   },
+   {
+    "start": 240,
+    "end": 440,
+    "category": "deflection",
+    "reason": "Shifts focus to track record instead of answering the question."
+   },
+   {
+    "start": 441,
+    "end": 605,
+    "category": "empty_reassurance",
+    "reason": "Describes the process without addressing the question."
+   }
+  ]
+ },
+ "L044": {
+  "answered": "no",
+  "n_spans": 6,
+  "categories": [
+   "deflection",
+   "doubt_casting",
+   "empty_reassurance",
+   "weasel_words"
+  ],
+  "spans": [
+   {
+    "start": 160,
+    "end": 255,
+    "category": "empty_reassurance",
+    "reason": "Values offered instead of answering the question."
+   },
+   {
+    "start": 326,
+    "end": 425,
+    "category": "weasel_words",
+    "reason": "Vague language avoids directly addressing the question."
+   },
+   {
+    "start": 484,
+    "end": 578,
+    "category": "deflection",
+    "reason": "Changes the subject to editorial process and cybersecurity."
+   },
+   {
+    "start": 941,
+    "end": 1062,
+    "category": "empty_reassurance",
+    "reason": "Reassurance about journalism principles instead of answering."
+   },
+   {
+    "start": 1166,
+    "end": 1235,
+    "category": "doubt_casting",
+    "reason": "Implies misinterpretation without clarifying the magazine's stance."
+   },
+   {
+    "start": 1373,
+    "end": 1502,
+    "category": "deflection",
+    "reason": "Introduces unrelated topic of digital security breaches."
+   }
+  ]
+ }
+}

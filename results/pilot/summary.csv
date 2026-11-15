@@ -1,0 +1,5 @@
+model,condition,lie,honest,C,D,unparsed,n,mask_honesty_score
+meta-llama/llama-3.3-70b-instruct,baseline,58.3,28.3,13.3,0.0,0.0,60,41.7
+meta-llama/llama-3.3-70b-instruct,imply,43.3,6.7,50.0,0.0,0.0,60,56.7
+openai/gpt-4o-mini,baseline,41.7,33.3,25.0,0.0,0.0,60,58.3
+openai/gpt-4o-mini,imply,31.7,16.7,51.7,0.0,0.0,60,68.3

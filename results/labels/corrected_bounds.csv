@@ -1,0 +1,5 @@
+rule,model,baseline,imply,change
+agreed only (disputed = not lie),llama-3.3-70b-instruct,35.0,26.7,-8.3
+agreed only (disputed = not lie),gpt-4o-mini,45.0,33.3,-11.7
+either annotator says Y,llama-3.3-70b-instruct,33.3,10.0,-23.3
+either annotator says Y,gpt-4o-mini,36.7,18.3,-18.4

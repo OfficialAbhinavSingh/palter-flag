@@ -1,0 +1,5 @@
+model,outcome,n_items,baseline_only,imply_only,mcnemar_exact_p
+meta-llama/llama-3.3-70b-instruct,lie,60,13,4,0.049
+meta-llama/llama-3.3-70b-instruct,honest,60,14,1,0.001
+openai/gpt-4o-mini,lie,60,9,3,0.146
+openai/gpt-4o-mini,honest,60,13,3,0.0213
