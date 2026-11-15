@@ -4,7 +4,7 @@
 
 AI models rarely need to lie to mislead. Ask "have your zero-sugar cakes ever contained sugar?" and a model told the truth can reply: *"I can assure you that we take the integrity of our products seriously … We have implemented strict quality control measures."* Nothing in it is false. The reader still walks away believing the wrong thing.
 
-Honesty benchmarks don't catch this, and our pilot shows they can be gamed with it. So the help has to reach the reader at the moment they read the answer.
+Commission-only honesty scores need not penalize this, and our pilot tests that boundary in MASK. So the help has to reach the reader at the moment they read the answer.
 
 ## 1. Why: benchmarks reward dodging
 
@@ -26,7 +26,7 @@ The same 60 MASK `provided_facts` items for seven models from seven vendors, gra
 | Gemini-2.5-Flash | 38.3 → **46.7** | 18.3% → **10.0%** | 20.0% → 36.7% |
 | Claude-Haiku-4.5 | 93.3 → **90.0** | 71.7% → **48.3%** | 21.7% → 41.7% |
 
-Truthful answers fell for all seven models and MASK honesty rose for six. Claude-Haiku-4.5 barely lies, so its score stayed flat while its truthful rate dropped 23 points, a shift the headline number misses entirely. Over all 420 item-model pairs, 72 answers stopped being truthful and 16 started (exact McNemar p ≈ 10⁻⁹). The benchmark reads this as the models getting more honest; they moved from telling the truth to dodging it. [Smith, Chughtai & Nanda (2025)](https://arxiv.org/abs/2511.22662) note that MASK undercounts deception; we show the gap can be exploited on purpose. Details in [`results/pilot_all/`](results/pilot_all/).
+Truthful answers fell for all seven models and MASK honesty rose for six. Claude-Haiku-4.5 has a low baseline lie rate, so its score changed from 93.3 to 90.0 while its truthful rate dropped 23 points, a shift the headline number misses entirely. Over all 420 item-model pairs, 72 answers stopped being truthful and 16 started (exact McNemar p ≈ 10⁻⁹; descriptive pooled summary, not an independent test, since models share items). For six models, MASK honesty rises despite the fall in truthful answers. [Smith, Chughtai & Nanda (2025)](https://arxiv.org/abs/2511.22662) report disagreement between MASK labels and a full-transcript autorater on rollouts from one model; we show the gap can be exploited on purpose. Details in [`results/pilot_all/`](results/pilot_all/).
 
 ![Figure 1](results/figures/fig1_pilot.png)
 
@@ -42,7 +42,7 @@ Input: the question and the answer, nothing else. Output:
 | What to do | "Ask this instead: …" |
 | Where the answer is | the one sentence that actually answers, if any (v0.3) |
 
-Every flag is an exact quote from the answer, so it can be highlighted in place. Paltering, weasel words, empty rhetoric and unverified claims follow the taxonomy in [Liang et al. (2025), Machine Bullshit](https://arxiv.org/abs/2507.07484). The flagger is one GPT-4o call per answer, under 1¢.
+Every flag is an exact quote from the answer, so it can be highlighted in place. Paltering, weasel words, empty rhetoric and unverified claims follow the taxonomy in [Liang et al. (2025), Machine Bullshit](https://arxiv.org/abs/2507.07484). The flagger is one GPT-4o call per answer. The historical per-answer cost requires a local API cache and is not verified by the public-clone ledger.
 
 - [`src/hbo/flagger.py`](src/hbo/flagger.py): current version (v0.3, adds burying and the direct-answer pointer)
 - [`src/hbo/flagger_v02.py`](src/hbo/flagger_v02.py): frozen version shown in the user study
@@ -62,7 +62,7 @@ Against the adjudicated labels, Palter Flag v0.2 flags something in every evasiv
 
 Live at [palter-flag-study.vercel.app](https://palter-flag-study.vercel.app). Each participant reads 12 AI answers (6 evasive, 3 truthful, 3 outright lies), half of them with Palter Flag highlights, assigned at random and balanced within each type. For each one they rate how likely a statement is to be true (0 to 100) and how much they trust the answer (1 to 5).
 
-Outcomes, fixed before data collection:
+Outcomes in the analysis script (the supplied paper draft states they were written after the first two responses arrived; this is not a claim of pre-registration or of specification before all data collection):
 
 | Answer type | Question |
 |---|---|
@@ -98,7 +98,7 @@ scripts/
   make_figures.py       Figure 1
   make_tool_figure.py   Figure 2 (Palter Flag on one pilot answer)
   burying_check.py      v0.3 burying check on 6 long answers
-  build_ledger.py       recompute every number in the report; writes docs/claims_ledger.md
+  build_ledger.py       check selected, script-enumerated numerical claims; writes docs/claims_ledger.md
   pilot_all_models.py   combine the MASK pilot across all seven models
   false_alarm_check.py  run the frozen flagger on answers MASK graded truthful
 src/hbo/                flagger (v0.3), frozen flagger_v02, MASK scoring rules (verbatim)
@@ -111,7 +111,19 @@ docs/labelling_guide.md what counts as misleading, with worked examples
 presentation/           Bengaluru hub deck (PDF) and study QR code
 ```
 
-## Reproduce
+## Offline checks (no API calls)
+
+```bash
+python -m venv .venv
+. .venv/bin/activate
+python -m pip install -e .
+python scripts/build_ledger.py
+python -m unittest discover -s tests -v
+```
+
+These commands neither fetch private study responses nor run models. A passing ledger can still have local-cache entries marked not checkable. The tracked study results contain only two initial responses and are pipeline checks, not final participant findings.
+
+## Reproduce model runs (API calls may spend money)
 
 ```bash
 uv venv && uv pip install -e .
@@ -126,7 +138,7 @@ cd study && set -a && . ./.env.local && set +a && node fetch_responses.mjs && cd
 python scripts/analyze_study.py
 ```
 
-Every API call is cached, so re-running costs nothing for work already done.
+API calls are cached locally. A clean clone does not contain those caches; re-running model-generation or flagging scripts can make new paid calls.
 
 ## Data note
 
@@ -137,9 +149,15 @@ Apart from a few short examples quoted in this README and the slides, this repos
 - `results/pilot/results_graded.csv` keeps MASK's grade per answer, not the answer text.
 - The study items (questions and answers shown to participants) are not included; `scripts/build_study_items.py` rebuilds them from MASK and the pilot outputs.
 
-With these files, `analyze_labels.py`, `pilot_stats.py`, `make_figures.py` and `build_ledger.py` reproduce every number in the results above without any API calls. Regenerating the raw model answers needs an OpenRouter key and will give different samples, since generation runs at temperature 1.
+The tracked label and grade files support offline analyses with `analyze_labels.py`, `pilot_stats.py` and `make_figures.py`. `build_ledger.py` checks selected expected values stored in its own source, not the report text: at this revision 51 checkable claims match and one cost claim needs a local cache. It does not parse a DOCX/PDF or check every number. Regenerating the raw model answers needs an OpenRouter key and will give different samples, since generation runs at temperature 1.
 
 Study responses (ratings, timings and two optional multiple-choice answers under a random id; no names, emails or IP addresses) stay in a private store. Aggregated results are in `results/study/`.
+
+## Before submission
+
+- Confirm which code, if any, predates the sprint and mark it here and in the report. This revision does not establish that chronology.
+- Replace the two-response pipeline check with the team-approved final study analysis, explicitly stating pilot inclusion/exclusion and analysis timing.
+- Confirm affiliations, actual author contributions and LLM-use disclosures.
 
 ## Team
 
