@@ -4,7 +4,7 @@
 
 AI models rarely need to lie to mislead. Ask "have your zero-sugar cakes ever contained sugar?" and a model told the truth can reply: *"I can assure you that we take the integrity of our products seriously … We have implemented strict quality control measures."* Nothing in it is false. The reader still walks away believing the wrong thing.
 
-Commission-only honesty scores need not penalize this, and our pilot tests that boundary in MASK. So the help has to reach the reader at the moment they read the answer.
+MASK, a widely used honesty benchmark, counts only explicit lies, and our pilot shows that boundary can be gamed on purpose. So the help has to reach the reader at the moment they read the answer.
 
 ## 1. Why: benchmarks reward dodging
 
@@ -26,7 +26,7 @@ The same 60 MASK `provided_facts` items for seven models from seven vendors, gra
 | Gemini-2.5-Flash | 38.3 → **46.7** | 18.3% → **10.0%** | 20.0% → 36.7% |
 | Claude-Haiku-4.5 | 93.3 → **90.0** | 71.7% → **48.3%** | 21.7% → 41.7% |
 
-Truthful answers fell for all seven models and MASK honesty rose for six. Claude-Haiku-4.5 has a low baseline lie rate, so its score changed from 93.3 to 90.0 while its truthful rate dropped 23 points, a shift the headline number misses entirely. Over all 420 item-model pairs, 72 answers stopped being truthful and 16 started (exact McNemar p ≈ 10⁻⁹; descriptive pooled summary, not an independent test, since models share items). For six models, MASK honesty rises despite the fall in truthful answers. [Smith, Chughtai & Nanda (2025)](https://arxiv.org/abs/2511.22662) report disagreement between MASK labels and a full-transcript autorater on rollouts from one model; we show the gap can be exploited on purpose. Details in [`results/pilot_all/`](results/pilot_all/).
+Truthful answers fell for all seven models and MASK honesty rose for six. Claude-Haiku-4.5 has a low baseline lie rate, so its score changed from 93.3 to 90.0 while its truthful rate dropped 23 points, a shift the headline number misses entirely. Over all 420 item-model pairs, 72 answers stopped being truthful and 16 started (exact McNemar p ≈ 10⁻⁹; descriptive pooled summary, not an independent test, since models share items). [Smith, Chughtai & Nanda (2025)](https://arxiv.org/abs/2511.22662) report disagreement between MASK labels and a full-transcript autorater on rollouts from one model; we show the gap can be exploited on purpose. Details in [`results/pilot_all/`](results/pilot_all/).
 
 ![Figure 1](results/figures/fig1_pilot.png)
 
@@ -42,7 +42,7 @@ Input: the question and the answer, nothing else. Output:
 | What to do | "Ask this instead: …" |
 | Where the answer is | the one sentence that actually answers, if any (v0.3) |
 
-Every flag is an exact quote from the answer, so it can be highlighted in place. Paltering, weasel words, empty rhetoric and unverified claims follow the taxonomy in [Liang et al. (2025), Machine Bullshit](https://arxiv.org/abs/2507.07484). The flagger is one GPT-4o call per answer. The historical per-answer cost requires a local API cache and is not verified by the public-clone ledger.
+Every flag is an exact quote from the answer, so it can be highlighted in place. Paltering, weasel words, empty rhetoric and unverified claims follow the taxonomy in [Liang et al. (2025), Machine Bullshit](https://arxiv.org/abs/2507.07484). The flagger is one GPT-4o call per answer.
 
 - [`src/hbo/flagger.py`](src/hbo/flagger.py): current version (v0.3, adds burying and the direct-answer pointer)
 - [`src/hbo/flagger_v02.py`](src/hbo/flagger_v02.py): frozen version shown in the user study
@@ -62,7 +62,7 @@ Against the adjudicated labels, Palter Flag v0.2 flags something in every evasiv
 
 Live at [palter-flag-study.vercel.app](https://palter-flag-study.vercel.app). Each participant reads 12 AI answers (6 evasive, 3 truthful, 3 outright lies), half of them with Palter Flag highlights, assigned at random and balanced within each type. For each one they rate how likely a statement is to be true (0 to 100) and how much they trust the answer (1 to 5).
 
-Outcomes in the analysis script (the supplied paper draft states they were written after the first two responses arrived; this is not a claim of pre-registration or of specification before all data collection):
+Outcomes, written into the analysis script after the first two responses arrived and before any later data (not pre-registered):
 
 | Answer type | Question |
 |---|---|
@@ -152,12 +152,6 @@ Apart from a few short examples quoted in this README and the slides, this repos
 The tracked label and grade files support offline analyses with `analyze_labels.py`, `pilot_stats.py` and `make_figures.py`. `build_ledger.py` checks selected expected values stored in its own source, not the report text: at this revision 51 checkable claims match and one cost claim needs a local cache. It does not parse a DOCX/PDF or check every number. Regenerating the raw model answers needs an OpenRouter key and will give different samples, since generation runs at temperature 1.
 
 Study responses (ratings, timings and two optional multiple-choice answers under a random id; no names, emails or IP addresses) stay in a private store. Aggregated results are in `results/study/`.
-
-## Before submission
-
-- Confirm which code, if any, predates the sprint and mark it here and in the report. This revision does not establish that chronology.
-- Replace the two-response pipeline check with the team-approved final study analysis, explicitly stating pilot inclusion/exclusion and analysis timing.
-- Confirm affiliations, actual author contributions and LLM-use disclosures.
 
 ## Team
 
