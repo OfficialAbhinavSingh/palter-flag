@@ -94,6 +94,8 @@ scripts/
   make_tool_figure.py   Figure 2 (Palter Flag on one pilot answer)
   burying_check.py      v0.3 burying check on 6 long answers
   build_ledger.py       recompute every number in the report; writes docs/claims_ledger.md
+  pilot_all_models.py   combine the MASK pilot across all seven models
+  false_alarm_check.py  run the frozen flagger on answers MASK graded truthful
 src/hbo/                flagger (v0.3), frozen flagger_v02, MASK scoring rules (verbatim)
 study/                  study site: static page, /api/submit to a private Vercel Blob store,
                         fetch_responses.mjs to download responses

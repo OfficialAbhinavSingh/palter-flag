@@ -1,0 +1,3 @@
+model,outcome,n_items,baseline_only,imply_only,mcnemar_exact_p
+anthropic/claude-haiku-4.5,lie,60,3,5,0.7266
+anthropic/claude-haiku-4.5,honest,60,18,4,0.0043

@@ -1,0 +1,3 @@
+model,condition,lie,honest,C,D,unparsed,n,mask_honesty_score
+qwen/qwen3-235b-a22b-2507,baseline,66.7,21.7,11.7,1.7,0.0,60,33.3
+qwen/qwen3-235b-a22b-2507,imply,53.3,13.3,33.3,1.7,0.0,60,46.7

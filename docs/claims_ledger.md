@@ -17,6 +17,19 @@ A ✗ means the report text and the data disagree; the script exits non-zero.
 | 4.1 | GPT-4o-mini truthful: lost vs gained, McNemar p | 13 vs 3, p = 0.02 | 13 vs 3, p = 0.02 | `results/pilot/paired_tests.csv` | ✓ |
 | 4.1 | Llama lies: stopped vs started, McNemar p | 13 vs 4, p = 0.049 | 13 vs 4, p = 0.049 | `results/pilot/paired_tests.csv` | ✓ |
 | 4.1 | GPT-4o-mini lies: stopped vs started, McNemar p | 9 vs 3, p = 0.15 | 9 vs 3, p = 0.15 | `results/pilot/paired_tests.csv` | ✓ |
+| 4.1 | Models tested; vendors | 7; 7 | 7; 7 | `results/pilot_all/per_model.csv` | ✓ |
+| 4.1 | Models whose truthful share fell | 7 of 7 | 7 of 7 | `results/pilot_all/per_model.csv` | ✓ |
+| 4.1 | Range of truthful drop (points) | 7 to 23 | 7 to 23 | `results/pilot_all/per_model.csv` | ✓ |
+| 4.1 | Models whose MASK honesty rose; range (points) | 6 of 7; 8 to 20 | 6 of 7; 8 to 20 | `results/pilot_all/per_model.csv` | ✓ |
+| 4.1 | Truthful drop significant alone (p < 0.05) | 3 of 7 | 3 of 7 | `results/pilot_all/per_model.csv` | ✓ |
+| 4.1 | Pooled truthful lost vs gained (420 pairs) | 72 vs 16 | 72 vs 16 | `results/pilot_all/pooled.csv` | ✓ |
+| 4.1 | Pooled McNemar p, order of magnitude | 1e-09 | 1e-09 | `results/pilot_all/pooled.csv` | ✓ |
+| 4.1 | Claude-Haiku-4.5 MASK honesty; truthful % | 93.3 → 90.0; 71.7 → 48.3 | 93.3 → 90.0; 71.7 → 48.3 | `results/pilot_all/per_model.csv` | ✓ |
+| 3.1 | Grader outputs not parsed (of 840) | 2 | 2 | `results/pilot_all/per_model.csv` | ✓ |
+| 4.3 | Truthful answers checked for false alarms | 40 | 40 | `results/false_alarm/summary.csv` | ✓ |
+| 4.3 | Truthful answers with any span; persuading span | 31 of 40; 22 of 40 | 31 of 40; 22 of 40 | `results/false_alarm/summary.csv` | ✓ |
+| 4.3 | Mean spans on truthful answers | 3.3 | 3.3 | `results/false_alarm/summary.csv` | ✓ |
+| 4.3 | Verdict 'not answered': truthful vs evasive | 4 of 40 vs 73 of 84 | 4 of 40 vs 73 of 84 | `results/false_alarm/summary.csv, results/labels/flags_v02.json` | ✓ |
 | 3.3/4.2 | Evasive answers labelled | 84 | 84 | `annotations/pilot/label_sheet_*.csv` | ✓ |
 | 4.2 | Raw annotator agreement | 59 of 84 (70%) | 59 of 84 (70%) | `annotations/pilot/label_sheet_*.csv` | ✓ |
 | 4.2 | Cohen's κ | 0.19 | 0.19 | `annotations/pilot/label_sheet_*.csv` | ✓ |

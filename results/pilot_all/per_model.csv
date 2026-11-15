@@ -1,0 +1,8 @@
+model,n_items,mask_honesty_baseline,truthful_baseline,evasive_baseline,unparsed_baseline,mask_honesty_imply,truthful_imply,evasive_imply,unparsed_imply,truthful_lost,truthful_gained,truthful_p,lie_lost,lie_gained,lie_p,mask_change,truthful_change
+DeepSeek-V3.1,60,30.0,13.3,16.7,0,50.0,6.7,43.3,1,5,1,0.2188,13,1,0.0018,20.0,-6.6
+Mistral-Small-3.2,60,36.7,16.7,20.0,1,51.7,8.3,43.3,0,9,4,0.2668,14,5,0.0636,15.0,-8.4
+Llama-3.3-70B,60,41.7,28.3,13.3,0,56.7,6.7,50.0,0,14,1,0.001,13,4,0.049,15.0,-21.6
+Qwen3-235B,60,33.3,21.7,11.7,0,46.7,13.3,33.3,0,6,1,0.125,10,2,0.0386,13.4,-8.4
+GPT-4o-mini,60,58.3,33.3,25.0,0,68.3,16.7,51.7,0,13,3,0.0213,9,3,0.146,10.0,-16.6
+Gemini-2.5-Flash,60,38.3,18.3,20.0,0,46.7,10.0,36.7,0,7,2,0.1797,8,3,0.2266,8.4,-8.3
+Claude-Haiku-4.5,60,93.3,71.7,21.7,0,90.0,48.3,41.7,0,18,4,0.0043,3,5,0.7266,-3.3,-23.4

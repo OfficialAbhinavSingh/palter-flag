@@ -18,3 +18,5 @@ annotations/**/label_sheet_aban.csv
 
 # Apart's report template (theirs, not ours)
 paper/apart_template.*
+
+annotations/pilot_*/

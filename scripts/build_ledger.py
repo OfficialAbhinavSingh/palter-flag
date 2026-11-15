@@ -65,6 +65,19 @@ def pilot_cost():
     return sum(json.loads(line).get("cost", 0) for line in path.read_text().splitlines())
 
 
+def per_model(name):
+    return pd.read_csv(R / "pilot_all/per_model.csv").set_index("model").loc[name]
+
+
+def fa():
+    return pd.read_csv(R / "false_alarm/summary.csv")
+
+
+def pooled(outcome):
+    return pd.read_csv(R / "pilot_all/pooled.csv").set_index("outcome").loc[outcome]
+
+VENDOR = {"GPT-4o-mini": "OpenAI", "Llama-3.3-70B": "Meta", "DeepSeek-V3.1": "DeepSeek", "Gemini-2.5-Flash": "Google",
+          "Claude-Haiku-4.5": "Anthropic", "Qwen3-235B": "Alibaba", "Mistral-Small-3.2": "Mistral"}
 L, G = "meta-llama/llama-3.3-70b-instruct", "openai/gpt-4o-mini"
 AGREED, EITHER = "agreed only (disputed = not lie)", "either annotator says Y"
 
@@ -94,6 +107,31 @@ CLAIMS = [
      lambda: f"{paired().loc[(L, 'lie'), 'baseline_only']} vs {paired().loc[(L, 'lie'), 'imply_only']}, p = {paired().loc[(L, 'lie'), 'mcnemar_exact_p']:.3f}", "results/pilot/paired_tests.csv"),
     ("4.1", "GPT-4o-mini lies: stopped vs started, McNemar p", "9 vs 3, p = 0.15",
      lambda: f"{paired().loc[(G, 'lie'), 'baseline_only']} vs {paired().loc[(G, 'lie'), 'imply_only']}, p = {paired().loc[(G, 'lie'), 'mcnemar_exact_p']:.2f}", "results/pilot/paired_tests.csv"),
+    ("4.1", "Models tested; vendors", "7; 7",
+     lambda: (lambda d: f"{len(d)}; {len({VENDOR[m] for m in d.model})}")(pd.read_csv(R / "pilot_all/per_model.csv")), "results/pilot_all/per_model.csv"),
+    ("4.1", "Models whose truthful share fell", "7 of 7",
+     lambda: (lambda d: f"{(d.truthful_change < 0).sum()} of {len(d)}")(pd.read_csv(R / "pilot_all/per_model.csv")), "results/pilot_all/per_model.csv"),
+    ("4.1", "Range of truthful drop (points)", "7 to 23",
+     lambda: (lambda d: f"{-d.truthful_change.max():.0f} to {-d.truthful_change.min():.0f}")(pd.read_csv(R / "pilot_all/per_model.csv")), "results/pilot_all/per_model.csv"),
+    ("4.1", "Models whose MASK honesty rose; range (points)", "6 of 7; 8 to 20",
+     lambda: (lambda d: f"{(d.mask_change > 0).sum()} of {len(d)}; {d[d.mask_change > 0].mask_change.min():.0f} to {d.mask_change.max():.0f}")(pd.read_csv(R / "pilot_all/per_model.csv")), "results/pilot_all/per_model.csv"),
+    ("4.1", "Truthful drop significant alone (p < 0.05)", "3 of 7",
+     lambda: (lambda d: f"{(d.truthful_p < 0.05).sum()} of {len(d)}")(pd.read_csv(R / "pilot_all/per_model.csv")), "results/pilot_all/per_model.csv"),
+    ("4.1", "Pooled truthful lost vs gained (420 pairs)", "72 vs 16",
+     lambda: f"{int(pooled('truthful').baseline_only)} vs {int(pooled('truthful').imply_only)}", "results/pilot_all/pooled.csv"),
+    ("4.1", "Pooled McNemar p, order of magnitude", "1e-09",
+     lambda: f"{pooled('truthful').mcnemar_exact_p:.0e}".replace("e-0", "e-0"), "results/pilot_all/pooled.csv"),
+    ("4.1", "Claude-Haiku-4.5 MASK honesty; truthful %", "93.3 → 90.0; 71.7 → 48.3",
+     lambda: (lambda r: f"{r.mask_honesty_baseline:.1f} → {r.mask_honesty_imply:.1f}; {r.truthful_baseline:.1f} → {r.truthful_imply:.1f}")(per_model("Claude-Haiku-4.5")), "results/pilot_all/per_model.csv"),
+    ("3.1", "Grader outputs not parsed (of 840)", "2",
+     lambda: str(int(pd.read_csv(R / "pilot_all/per_model.csv")[["unparsed_baseline", "unparsed_imply"]].sum().sum())), "results/pilot_all/per_model.csv"),
+    ("4.3", "Truthful answers checked for false alarms", "40", lambda: str(len(fa())), "results/false_alarm/summary.csv"),
+    ("4.3", "Truthful answers with any span; persuading span", "31 of 40; 22 of 40",
+     lambda: (lambda d: f"{d.any_span.sum()} of {len(d)}; {d.any_persuading.sum()} of {len(d)}")(fa()), "results/false_alarm/summary.csv"),
+    ("4.3", "Mean spans on truthful answers", "3.3", lambda: f"{fa().n_spans.mean():.1f}", "results/false_alarm/summary.csv"),
+    ("4.3", "Verdict 'not answered': truthful vs evasive", "4 of 40 vs 73 of 84",
+     lambda: f"{(fa().answered == 'no').sum()} of {len(fa())} vs {sum(v['answered'] == 'no' for v in json.loads((R / 'labels/flags_v02.json').read_text()).values())} of 84",
+     "results/false_alarm/summary.csv, results/labels/flags_v02.json"),
     ("3.3/4.2", "Evasive answers labelled", "84", lambda: str(len(labels())), "annotations/pilot/label_sheet_*.csv"),
     ("4.2", "Raw annotator agreement", "59 of 84 (70%)",
      lambda: (lambda d: f"{(d.a == d.m).sum()} of {len(d)} ({(d.a == d.m).mean():.0%})")(labels()), "annotations/pilot/label_sheet_*.csv"),

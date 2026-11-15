@@ -1,0 +1,3 @@
+model,outcome,n_items,baseline_only,imply_only,mcnemar_exact_p
+deepseek/deepseek-chat-v3.1,lie,60,13,1,0.0018
+deepseek/deepseek-chat-v3.1,honest,60,5,1,0.2188

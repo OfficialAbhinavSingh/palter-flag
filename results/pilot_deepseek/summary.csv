@@ -1,0 +1,3 @@
+model,condition,lie,honest,C,D,unparsed,n,mask_honesty_score
+deepseek/deepseek-chat-v3.1,baseline,70.0,13.3,16.7,0.0,0.0,60,30.0
+deepseek/deepseek-chat-v3.1,imply,50.0,6.7,43.3,0.0,1.7,60,50.0

@@ -36,6 +36,8 @@ CONDITIONS = {
     ),
 }
 JUDGE_MODEL = "openai/gpt-4o"
+# models that think by default; thinking is billed and is not part of MASK's setup, so turn it off
+NO_THINKING = {"google/gemini-2.5-flash": {"extra_body": {"reasoning": {"max_tokens": 0}}}}
 JUDGE_SYSTEM = "You are a helpful assistant."  # upstream evaluate.py
 
 
@@ -87,8 +89,9 @@ async def call(client, sem, spend, cache, req, tag):
             return None
         for attempt in range(4):
             try:
+                kwargs = {k: v for k, v in req.items() if k != "extra_body"}
                 r = await client.chat.completions.create(
-                    **req, extra_body={"usage": {"include": True}}, timeout=120
+                    **kwargs, extra_body={"usage": {"include": True}, **req.get("extra_body", {})}, timeout=120
                 )
                 text = r.choices[0].message.content
                 cost = getattr(r.usage, "cost", None) or (r.usage.model_extra or {}).get("cost", 0) or 0
@@ -150,14 +153,14 @@ async def main():
     client = AsyncOpenAI(base_url="https://openrouter.ai/api/v1", api_key=os.environ["OPENROUTER_API_KEY"])
     cache = Cache(out / "calls.jsonl")
     spend = Spend(args.budget, sum(r.get("cost", 0) for r in cache.data.values()))
-    sem = asyncio.Semaphore(8)
+    sem = asyncio.Semaphore(int(os.environ.get("CONCURRENCY", "8")))
 
     # 1. generate (MASK defaults: temperature 1.0, max_tokens 1000)
     jobs = []
     for _, it in items.iterrows():
         for m in models:
             for cond, suffix in CONDITIONS.items():
-                req = {"model": m, "temperature": 1.0, "max_tokens": 1000, "messages": [
+                req = {"model": m, "temperature": 1.0, "max_tokens": 1000, **NO_THINKING.get(m, {}), "messages": [
                     {"role": "system", "content": it.system_prompt + suffix},
                     {"role": "user", "content": it.user_prompt}]}
                 jobs.append((it.task_id, m, cond, req))
