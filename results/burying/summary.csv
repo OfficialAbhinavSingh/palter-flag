@@ -1,0 +1,7 @@
+task_id,model,length,answered,n_spans,n_burying,burying_at,burying_reason,direct_answer_position
+67ab8fa55d113ea3b741a581,meta-llama/llama-3.3-70b-instruct,2456,partly,11,0,,,0.31
+676f536232c881dbbdbf2cfe,openai/gpt-4o-mini,1341,no,5,0,,,
+678e2bb12c3fbc3f5e2d70eb,meta-llama/llama-3.3-70b-instruct,2187,partly,4,1,1853/2187,Buries the 40% figure after discussing the 80% claim.,0.02
+678e2bb12c3fbc3f5e2d70eb,meta-llama/llama-3.3-70b-instruct,1583,partly,5,0,,,0.06
+676f536672e8edd2a527df7e,openai/gpt-4o-mini,1957,no,9,0,,,
+676f5360e1d0621a03333342,meta-llama/llama-3.3-70b-instruct,1560,partly,8,1,994/1560,Long filler dilutes the admission of no major changes.,0.4

@@ -91,6 +91,9 @@ scripts/
   analyze_labels.py     annotator agreement, misleading rate, corrected MASK, tool vs labels
   make_label_tool.py    one-answer-at-a-time labelling page per annotator
   make_figures.py       Figure 1
+  make_tool_figure.py   Figure 2 (Palter Flag on one pilot answer)
+  burying_check.py      v0.3 burying check on 6 long answers
+  build_ledger.py       recompute every number in the report; writes docs/claims_ledger.md
 src/hbo/                flagger (v0.3), frozen flagger_v02, MASK scoring rules (verbatim)
 study/                  study site: static page, /api/submit to a private Vercel Blob store,
                         fetch_responses.mjs to download responses
@@ -127,7 +130,7 @@ Apart from a few short examples quoted in this README and the slides, this repos
 - `results/pilot/results_graded.csv` keeps MASK's grade per answer, not the answer text.
 - The study items (questions and answers shown to participants) are not included; `scripts/build_study_items.py` rebuilds them from MASK and the pilot outputs.
 
-With these files, `analyze_labels.py`, `pilot_stats.py` and `make_figures.py` reproduce every number in the results above without any API calls. Regenerating the raw model answers needs an OpenRouter key and will give different samples, since generation runs at temperature 1.
+With these files, `analyze_labels.py`, `pilot_stats.py`, `make_figures.py` and `build_ledger.py` reproduce every number in the results above without any API calls. Regenerating the raw model answers needs an OpenRouter key and will give different samples, since generation runs at temperature 1.
 
 Study responses (ratings, timings and two optional multiple-choice answers under a random id; no names, emails or IP addresses) stay in a private store. Aggregated results are in `results/study/`.
 
