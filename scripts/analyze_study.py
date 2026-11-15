@@ -1,6 +1,9 @@
 """Analyse the Palter Flag user study.
 
-Outcomes, fixed before looking at results:
+Outcomes implemented below:
+  The supplied paper draft says these were written after the first two responses
+  arrived. Do not describe this as pre-registration or as specification before
+  all data collection; no prospective status for later responses is established.
   primary     belief in the truth (0-100) on evasive answers, highlighted vs plain
   secondary   trust (1-5) on evasive answers, highlighted vs plain
   backfire    belief in the truth and trust on truthful answers (highlights should not lower them)

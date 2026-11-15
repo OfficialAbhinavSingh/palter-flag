@@ -1,8 +1,11 @@
-"""Claims ledger: recompute every number the report states and check it against the text.
+"""Recompute the selected numerical claims enumerated in CLAIMS.
 
-Each claim lists the value as written in the report, a function that recomputes it
-from tracked files, and the source. Writes docs/claims_ledger.md and exits non-zero
-if any claim no longer matches, so the report cannot drift from the data.
+Expected values are maintained here by hand. This does not parse the report or
+establish that every number or statement in a DOCX/PDF has been checked. Each
+entry compares its expected value with the named source files, some of which are
+tracked analysis outputs rather than raw observations. Local-cache claims may
+be unavailable in a public clone. Writes docs/claims_ledger.md and exits non-zero
+on mismatches. A successful exit does not mean skipped entries were verified.
 """
 import json
 import sys
@@ -201,9 +204,11 @@ def main():
             bad += not ok
         rows.append(f"| {sec} | {claim} | {written} | {got if got is not None else '–'} | `{src}` | {status} |")
     out = ["# Claims ledger", "",
-           "Every number stated in the report, recomputed from tracked files by `scripts/build_ledger.py`.",
-           "A ✗ means the report text and the data disagree; the script exits non-zero.", "",
-           "| Section | Claim | In report | Recomputed | Source | Check |", "|---|---|---|---|---|---|", *rows, ""]
+           "Selected claims enumerated in `scripts/build_ledger.py`, checked against the named source files.",
+           "Expected values are maintained in the script; it does not parse the DOCX/PDF or verify every report number.",
+           "Some checks read tracked analysis outputs. Local-cache entries can be skipped and are not verified.",
+           "A ✗ means a listed expected value differs from its recomputed value; the script exits non-zero.", "",
+           "| Section | Claim | Expected (in script) | Recomputed | Source | Check |", "|---|---|---|---|---|---|", *rows, ""]
     (ROOT / "docs/claims_ledger.md").write_text("\n".join(out))
     print("\n".join(rows))
     checked = len(CLAIMS) - skipped
