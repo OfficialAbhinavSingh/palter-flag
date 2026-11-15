@@ -1,9 +1,11 @@
 # Claims ledger
 
-Every number stated in the report, recomputed from tracked files by `scripts/build_ledger.py`.
-A ✗ means the report text and the data disagree; the script exits non-zero.
+Selected claims enumerated in `scripts/build_ledger.py`, checked against the named source files.
+Expected values are maintained in the script; it does not parse the DOCX/PDF or verify every report number.
+Some checks read tracked analysis outputs. Local-cache entries can be skipped and are not verified.
+A ✗ means a listed expected value differs from its recomputed value; the script exits non-zero.
 
-| Section | Claim | In report | Recomputed | Source | Check |
+| Section | Claim | Expected (in script) | Recomputed | Source | Check |
 |---|---|---|---|---|---|
 | 4.1 | Llama MASK honesty, baseline → imply | 41.7 → 56.7 | 41.7 → 56.7 | `results/pilot/summary.csv` | ✓ |
 | 4.1 | GPT-4o-mini MASK honesty, baseline → imply | 58.3 → 68.3 | 58.3 → 68.3 | `results/pilot/summary.csv` | ✓ |
