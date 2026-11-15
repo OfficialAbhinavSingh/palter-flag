@@ -49,9 +49,14 @@ def bound(rule, model):
     return f"{r.baseline:.1f} → {r.imply:.1f} ({r.change:+.1f})"
 
 
-def tool(rule, col):
-    t = pd.read_csv(R / "labels/tool_vs_human.csv").set_index("rule")
-    return t.loc[rule, col]
+def tool2(labels_set, rule):
+    return pd.read_csv(R / "labels/tool_vs_human.csv").set_index(["labels", "rule"]).loc[(labels_set, rule)]
+
+
+def tool_row(labels_set, rule):
+    r = tool2(labels_set, rule)
+    return (f"{int(r.tp + r.fp)}/{int(r.n)}, {r.precision:.2f}, {r.recall:.2f}, "
+            f"{int(r.tn)}/{int(r.tn + r.fp)}, {r.balanced_acc:.2f}")
 
 
 def spans(lab, col):
@@ -79,7 +84,6 @@ def pooled(outcome):
 VENDOR = {"GPT-4o-mini": "OpenAI", "Llama-3.3-70B": "Meta", "DeepSeek-V3.1": "DeepSeek", "Gemini-2.5-Flash": "Google",
           "Claude-Haiku-4.5": "Anthropic", "Qwen3-235B": "Alibaba", "Mistral-Small-3.2": "Mistral"}
 L, G = "meta-llama/llama-3.3-70b-instruct", "openai/gpt-4o-mini"
-AGREED, EITHER = "agreed only (disputed = not lie)", "either annotator says Y"
 
 CLAIMS = [
     # (section, claim, value as written, recompute, source)
@@ -143,27 +147,32 @@ CLAIMS = [
      lambda: (lambda d: f"{(d.a == 'Y').mean():.0%}, {(d.m == 'Y').mean():.0%}")(labels()), "annotations/pilot/label_sheet_*.csv"),
     ("4.2", "Disagreements, split", "25 (13 / 12)",
      lambda: (lambda d: f"{(d.a != d.m).sum()} ({((d.a == 'N') & (d.m == 'Y')).sum()} / {((d.a == 'Y') & (d.m == 'N')).sum()})")(labels()), "annotations/pilot/label_sheet_*.csv"),
-    ("4.2", "Agreed misleading, imply condition", "39/42", lambda: agreed_rate(condition="imply"), "annotations/pilot/"),
-    ("4.2", "Agreed misleading, baseline condition", "12/17", lambda: agreed_rate(condition="baseline"), "annotations/pilot/"),
-    ("4.2", "Llama agreed misleading, imply vs baseline", "18/20 vs 4/7",
-     lambda: f"{agreed_rate(L, 'imply')} vs {agreed_rate(L, 'baseline')}", "annotations/pilot/"),
-    ("4.2", "GPT-4o-mini agreed misleading, imply vs baseline", "21/22 vs 8/10",
-     lambda: f"{agreed_rate(G, 'imply')} vs {agreed_rate(G, 'baseline')}", "annotations/pilot/"),
-    ("Table 2", "Llama corrected honesty, agreed only", "35.0 → 26.7 (-8.3)", lambda: bound(AGREED, "llama-3.3-70b-instruct"), "results/labels/corrected_bounds.csv"),
-    ("Table 2", "GPT-4o-mini corrected honesty, agreed only", "45.0 → 33.3 (-11.7)", lambda: bound(AGREED, "gpt-4o-mini"), "results/labels/corrected_bounds.csv"),
-    ("Table 2", "Llama corrected honesty, either annotator", "33.3 → 10.0 (-23.3)", lambda: bound(EITHER, "llama-3.3-70b-instruct"), "results/labels/corrected_bounds.csv"),
-    ("Table 2", "GPT-4o-mini corrected honesty, either annotator", "36.7 → 18.3 (-18.4)", lambda: bound(EITHER, "gpt-4o-mini"), "results/labels/corrected_bounds.csv"),
-    ("Table 3", "Agreed answers scored (misleading / not)", "59 (51 / 8)",
-     lambda: f"{int(tool('any_span', 'n'))} ({int(tool('any_span', 'tp') + tool('any_span', 'fn'))} / {int(tool('any_span', 'tn') + tool('any_span', 'fp'))})", "results/labels/tool_vs_human.csv"),
-    ("Table 3", "Any span: flagged, precision, recall, specificity, BA", "59/59, 0.86, 1.00, 0/8, 0.50",
-     lambda: f"{int(tool('any_span', 'tp') + tool('any_span', 'fp'))}/{int(tool('any_span', 'n'))}, {tool('any_span', 'precision'):.2f}, {tool('any_span', 'recall'):.2f}, {int(tool('any_span', 'tn'))}/{int(tool('any_span', 'tn') + tool('any_span', 'fp'))}, {tool('any_span', 'balanced_acc'):.2f}", "results/labels/tool_vs_human.csv"),
-    ("Table 3", "Persuading span: flagged, precision, recall, specificity, BA", "51/59, 0.92, 0.92, 4/8, 0.71",
-     lambda: f"{int(tool('any_persuading_span', 'tp') + tool('any_persuading_span', 'fp'))}/{int(tool('any_persuading_span', 'n'))}, {tool('any_persuading_span', 'precision'):.2f}, {tool('any_persuading_span', 'recall'):.2f}, {int(tool('any_persuading_span', 'tn'))}/{int(tool('any_persuading_span', 'tn') + tool('any_persuading_span', 'fp'))}, {tool('any_persuading_span', 'balanced_acc'):.2f}", "results/labels/tool_vs_human.csv"),
-    ("4.3", "Mean flagged spans, misleading vs not", "4.9 vs 2.5",
+    ("4.2", "Agreed misleading, imply vs baseline", "39 of 42 vs 12 of 17",
+     lambda: f"{agreed_rate(condition='imply').replace('/', ' of ')} vs {agreed_rate(condition='baseline').replace('/', ' of ')}", "annotations/pilot/"),
+    ("4.2", "Adjudicated misleading, imply vs baseline", "50 of 61 vs 13 of 23",
+     lambda: (lambda b: f"{b[b.condition == 'imply'].misleading.sum()} of {b[b.condition == 'imply'].n.sum()} vs {b[b.condition == 'baseline'].misleading.sum()} of {b[b.condition == 'baseline'].n.sum()}")(pd.read_csv(R / "labels/by_condition.csv")), "results/labels/by_condition.csv"),
+    ("4.2", "Adjudicated misleading, Llama imply vs baseline", "23/30 vs 4/8",
+     lambda: (lambda b: f"{int(b.loc[(L, 'imply')].misleading)}/{int(b.loc[(L, 'imply')].n)} vs {int(b.loc[(L, 'baseline')].misleading)}/{int(b.loc[(L, 'baseline')].n)}")(pd.read_csv(R / "labels/by_condition.csv").set_index(["model", "condition"])), "results/labels/by_condition.csv"),
+    ("4.2", "Adjudicated misleading, GPT-4o-mini imply vs baseline", "27/31 vs 9/15",
+     lambda: (lambda b: f"{int(b.loc[(G, 'imply')].misleading)}/{int(b.loc[(G, 'imply')].n)} vs {int(b.loc[(G, 'baseline')].misleading)}/{int(b.loc[(G, 'baseline')].n)}")(pd.read_csv(R / "labels/by_condition.csv").set_index(["model", "condition"])), "results/labels/by_condition.csv"),
+    ("3.3", "Disputes resolved to first author: N / Y", "13 / 12",
+     lambda: (lambda a: f"{(a.final == 'N').sum()} / {(a.final == 'Y').sum()}")(pd.read_csv(ROOT / "annotations/pilot/adjudication.csv")), "annotations/pilot/adjudication.csv"),
+    ("Table 2", "Llama corrected, adjudicated", "35.0 → 18.3 (-16.7)", lambda: bound("adjudicated", "llama-3.3-70b-instruct"), "results/labels/corrected_bounds.csv"),
+    ("Table 2", "GPT-4o-mini corrected, adjudicated", "43.3 → 23.3 (-20.0)", lambda: bound("adjudicated", "gpt-4o-mini"), "results/labels/corrected_bounds.csv"),
+    ("Table 2", "Llama corrected, agreed only", "35.0 → 26.7 (-8.3)", lambda: bound("agreed only", "llama-3.3-70b-instruct"), "results/labels/corrected_bounds.csv"),
+    ("Table 2", "GPT-4o-mini corrected, agreed only", "45.0 → 33.3 (-11.7)", lambda: bound("agreed only", "gpt-4o-mini"), "results/labels/corrected_bounds.csv"),
+    ("Table 2", "Llama range of change over all resolutions", "-25.0 to -6.7",
+     lambda: (lambda b: f"{b.loc[('least favourable to MASK', 'llama-3.3-70b-instruct'), 'change']:.1f} to {b.loc[('most favourable to MASK', 'llama-3.3-70b-instruct'), 'change']:.1f}")(pd.read_csv(R / "labels/corrected_bounds.csv").set_index(["rule", "model"])), "results/labels/corrected_bounds.csv"),
+    ("Table 2", "GPT-4o-mini range of change over all resolutions", "-26.7 to -3.3",
+     lambda: (lambda b: f"{b.loc[('least favourable to MASK', 'gpt-4o-mini'), 'change']:.1f} to {b.loc[('most favourable to MASK', 'gpt-4o-mini'), 'change']:.1f}")(pd.read_csv(R / "labels/corrected_bounds.csv").set_index(["rule", "model"])), "results/labels/corrected_bounds.csv"),
+    ("Table 3", "Adjudicated labels: misleading / not", "63 / 21",
+     lambda: (lambda r: f"{int(r.tp + r.fn)} / {int(r.tn + r.fp)}")(tool2("adjudicated", "any_span")), "results/labels/tool_vs_human.csv"),
+    ("Table 3", "Any span (adjudicated): flagged, P, R, spec, BA", "84/84, 0.75, 1.00, 0/21, 0.50", lambda: tool_row("adjudicated", "any_span"), "results/labels/tool_vs_human.csv"),
+    ("Table 3", "Persuading span (adjudicated): flagged, P, R, spec, BA", "67/84, 0.84, 0.89, 10/21, 0.68", lambda: tool_row("adjudicated", "any_persuading_span"), "results/labels/tool_vs_human.csv"),
+    ("Table 3", "Persuading span (agreed only): flagged, P, R, spec, BA", "51/59, 0.92, 0.92, 4/8, 0.71", lambda: tool_row("agreed_only", "any_persuading_span"), "results/labels/tool_vs_human.csv"),
+    ("4.3", "Mean flagged spans, misleading vs not (adjudicated)", "4.9 vs 3.4",
      lambda: f"{spans('Y', 'mean_spans'):.1f} vs {spans('N', 'mean_spans'):.1f}", "results/labels/span_stats.csv"),
-    ("4.3", "Empty reassurance present, misleading vs not", "90% vs 25%",
-     lambda: f"{spans('Y', 'share_empty_reassurance'):.0%} vs {spans('N', 'share_empty_reassurance'):.0%}", "results/labels/span_stats.csv"),
-    ("4.3", "Non-misleading answers tagged non-answer", "5 of 8",
+    ("4.3", "Non-misleading answers tagged non-answer (adjudicated)", "15 of 21",
      lambda: f"{round(spans('N', 'share_non_answer') * spans('N', 'n'))} of {int(spans('N', 'n'))}", "results/labels/span_stats.csv"),
     ("4.4", "Long answers checked; burying flagged in", "6; 2",
      lambda: (lambda b: f"{len(b)}; {(b.n_burying > 0).sum()}")(pd.read_csv(R / "burying/summary.csv")), "results/burying/summary.csv"),

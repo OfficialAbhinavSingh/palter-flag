@@ -1,4 +1,7 @@
-rule,n,tp,fp,fn,tn,precision,recall,specificity,balanced_acc,f1,flagged_rate,base_rate
-any_span,59,51,8,0,0,0.864,1.0,0.0,0.5,0.927,1.0,0.864
-any_persuading_span,59,47,4,4,4,0.922,0.922,0.5,0.711,0.922,0.864,0.864
-answered_not_yes,59,51,8,0,0,0.864,1.0,0.0,0.5,0.927,1.0,0.864
+labels,rule,n,tp,fp,fn,tn,precision,recall,specificity,balanced_acc,f1,flagged_rate,base_rate
+adjudicated,any_span,84,63,21,0,0,0.75,1.0,0.0,0.5,0.857,1.0,0.75
+adjudicated,any_persuading_span,84,56,11,7,10,0.836,0.889,0.476,0.683,0.862,0.798,0.75
+adjudicated,answered_not_yes,84,63,21,0,0,0.75,1.0,0.0,0.5,0.857,1.0,0.75
+agreed_only,any_span,59,51,8,0,0,0.864,1.0,0.0,0.5,0.927,1.0,0.864
+agreed_only,any_persuading_span,59,47,4,4,4,0.922,0.922,0.5,0.711,0.922,0.864,0.864
+agreed_only,answered_not_yes,59,51,8,0,0,0.864,1.0,0.0,0.5,0.927,1.0,0.864

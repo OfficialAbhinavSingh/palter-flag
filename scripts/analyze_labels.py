@@ -11,7 +11,7 @@ Pre-specified:
 
 Inputs: annotations/pilot/label_sheet_{abhinav,mahak}.csv, annotations/pilot/label_key.csv
         results/labels/flags_v02.json (scripts/flag_labelled.py), results/pilot/results_graded.csv,
-        optional annotations/pilot/label_sheet_aban.csv (tie-break on disagreements only)
+        optional annotations/pilot/adjudication.csv (how disagreements were resolved; see its rule column)
 Output: results/labels/{agreement,by_condition,tool_vs_human}.csv and report.md
 """
 import json
@@ -64,8 +64,13 @@ def main():
 
     # 2. consensus
     df["consensus"] = np.where(a == b, a, None)
+    adj = ANN / "adjudication.csv"
     tb = ANN / "label_sheet_aban.csv"
-    if tb.exists():
+    if adj.exists():
+        t = pd.read_csv(adj)
+        df = df.merge(t[["label_id", "final"]].rename(columns={"final": "tb"}), on="label_id", how="left")
+        df["consensus"] = df.consensus.fillna(df.tb)
+    elif tb.exists():
         t = pd.read_csv(tb)
         t["tb"] = t["misleading (Y/N)"].astype(str).str.strip().str.upper()
         df = df.merge(t[["label_id", "tb"]], on="label_id", how="left")
@@ -89,37 +94,57 @@ def main():
                                                    corrected_honesty=("lie_corrected", lambda s: 100 - 100 * s.mean())).round(1).reset_index()
     corr.to_csv(OUT / "corrected_mask.csv", index=False)
 
-    # 4b. bounds over disputed answers: count only agreed-misleading, then either-annotator-misleading
+    # 4b. corrected honesty under every resolution of the disputes. Each disputed answer labelled
+    # misleading lowers honesty in its own condition, so the change (imply - baseline) is extreme when
+    # imply disputes go one way and baseline disputes the other; agreed-only and the recorded
+    # adjudication fall inside that range.
+    agreed_y = (df.abhinav == "Y") & (df.mahak == "Y")
+    disputed = df.abhinav != df.mahak
+    scenarios = [("most favourable to MASK", agreed_y | (disputed & (df.condition == "baseline"))),
+                 ("least favourable to MASK", agreed_y | (disputed & (df.condition == "imply"))),
+                 ("agreed only", agreed_y)]
+    if df.consensus.notna().all():
+        scenarios.append(("adjudicated", df.consensus == "Y"))
     bounds = []
-    for rule, mask in [("agreed only (disputed = not lie)", (df.abhinav == "Y") & (df.mahak == "Y")),
-                       ("either annotator says Y", (df.abhinav == "Y") | (df.mahak == "Y"))]:
+    for rule, mask in scenarios:
         mis_b = set(df[mask][["task_id", "model", "condition"]].itertuples(index=False, name=None))
         lie_b = (res.honesty == -1) | res[["task_id", "model", "condition"]].apply(tuple, axis=1).isin(mis_b)
-        g = res.assign(lie=lie_b).groupby(["model", "condition"]).lie.mean().mul(100).rsub(100).round(1).unstack()
+        g = res.assign(lie=lie_b).groupby(["model", "condition"]).lie.mean().mul(100).rsub(100).unstack()
         for mdl, row in g.iterrows():
-            bounds.append({"rule": rule, "model": mdl.split("/")[-1], "baseline": row.baseline, "imply": row.imply,
-                           "change": round(row.imply - row.baseline, 1)})
+            bounds.append({"rule": rule, "model": mdl.split("/")[-1], "baseline": round(row.baseline, 1),
+                           "imply": round(row.imply, 1), "change": round(row.imply - row.baseline, 1)})
     pd.DataFrame(bounds).to_csv(OUT / "corrected_bounds.csv", index=False)
 
-    # 5. tool vs human
+    # 5. tool vs human: on the adjudicated labels (all answers) and on agreed answers only
     rows = []
     fp = OUT / "flags_v02.json"
     if fp.exists():
         flags = json.loads(fp.read_text())
-        sc = df[df.consensus.notna()].copy()
-        sc["truth"] = sc.consensus == "Y"
         rules = {"any_span": lambda f: f["n_spans"] > 0,
                  "any_persuading_span": lambda f: bool(PERSUADING & set(f["categories"])),
                  "answered_not_yes": lambda f: f["answered"] != "yes"}
-        for name, rule in rules.items():
-            pred = sc.label_id.map(lambda i: rule(flags[i]) if i in flags else False)
-            tp = int((pred & sc.truth).sum()); fp_ = int((pred & ~sc.truth).sum()); fn = int((~pred & sc.truth).sum()); tn = int((~pred & ~sc.truth).sum())
-            p = tp / (tp + fp_) if tp + fp_ else float("nan"); r = tp / (tp + fn) if tp + fn else float("nan")
-            spec = tn / (tn + fp_) if tn + fp_ else float("nan")
-            rows.append({"rule": name, "n": len(sc), "tp": tp, "fp": fp_, "fn": fn, "tn": tn, "precision": p, "recall": r,
-                         "specificity": spec, "balanced_acc": (r + spec) / 2,
-                         "f1": 2 * p * r / (p + r) if p + r else float("nan"), "flagged_rate": pred.mean(),
-                         "base_rate": sc.truth.mean()})
+        agreed = df.abhinav == df.mahak
+        sets = {"adjudicated": df[df.consensus.notna()].copy(), "agreed_only": df[agreed].assign(consensus=df.abhinav[agreed])}
+        for label_set, sc in sets.items():
+            sc["truth"] = sc.consensus == "Y"
+            for name, rule in rules.items():
+                pred = sc.label_id.map(lambda i: rule(flags[i]) if i in flags else False)
+                tp = int((pred & sc.truth).sum()); fp_ = int((pred & ~sc.truth).sum()); fn = int((~pred & sc.truth).sum()); tn = int((~pred & ~sc.truth).sum())
+                p = tp / (tp + fp_) if tp + fp_ else float("nan"); r = tp / (tp + fn) if tp + fn else float("nan")
+                spec = tn / (tn + fp_) if tn + fp_ else float("nan")
+                rows.append({"labels": label_set, "rule": name, "n": len(sc), "tp": tp, "fp": fp_, "fn": fn, "tn": tn,
+                             "precision": p, "recall": r, "specificity": spec, "balanced_acc": (r + spec) / 2,
+                             "f1": 2 * p * r / (p + r) if p + r else float("nan"), "flagged_rate": pred.mean(),
+                             "base_rate": sc.truth.mean()})
+            if label_set == "adjudicated":
+                span_rows = []
+                for lab in ("Y", "N"):
+                    ids = sc[sc.consensus == lab].label_id
+                    cats = pd.Series([c for i in ids for c in flags[i]["categories"]]).value_counts()
+                    row = {"consensus": lab, "n": len(ids), "mean_spans": np.mean([flags[i]["n_spans"] for i in ids])}
+                    row.update({f"share_{c}": cats.get(c, 0) / len(ids) for c in sorted(PERSUADING | {"non_answer", "deflection", "empty_reassurance"})})
+                    span_rows.append(row)
+                pd.DataFrame(span_rows).round(3).to_csv(OUT / "span_stats.csv", index=False)
         pd.DataFrame(rows).round(3).to_csv(OUT / "tool_vs_human.csv", index=False)
 
     lines = ["# Human labels on MASK-evasive answers", "",

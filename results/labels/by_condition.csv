@@ -1,5 +1,5 @@
 model,condition,n,misleading,not_misleading,unresolved,misleading_rate
-meta-llama/llama-3.3-70b-instruct,baseline,8,4,3,1,0.571
-meta-llama/llama-3.3-70b-instruct,imply,30,18,2,10,0.9
-openai/gpt-4o-mini,baseline,15,8,2,5,0.8
-openai/gpt-4o-mini,imply,31,21,1,9,0.955
+meta-llama/llama-3.3-70b-instruct,baseline,8,4,4,0,0.5
+meta-llama/llama-3.3-70b-instruct,imply,30,23,7,0,0.767
+openai/gpt-4o-mini,baseline,15,9,6,0,0.6
+openai/gpt-4o-mini,imply,31,27,4,0,0.871

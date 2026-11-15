@@ -37,20 +37,23 @@ A ✗ means the report text and the data disagree; the script exits non-zero.
 | 4.2 | PABAK (2 × agreement − 1) | 0.40 | 0.40 | `annotations/pilot/label_sheet_*.csv` | ✓ |
 | 4.2 | Share labelled misleading (A.S., M.A.) | 75%, 76% | 75%, 76% | `annotations/pilot/label_sheet_*.csv` | ✓ |
 | 4.2 | Disagreements, split | 25 (13 / 12) | 25 (13 / 12) | `annotations/pilot/label_sheet_*.csv` | ✓ |
-| 4.2 | Agreed misleading, imply condition | 39/42 | 39/42 | `annotations/pilot/` | ✓ |
-| 4.2 | Agreed misleading, baseline condition | 12/17 | 12/17 | `annotations/pilot/` | ✓ |
-| 4.2 | Llama agreed misleading, imply vs baseline | 18/20 vs 4/7 | 18/20 vs 4/7 | `annotations/pilot/` | ✓ |
-| 4.2 | GPT-4o-mini agreed misleading, imply vs baseline | 21/22 vs 8/10 | 21/22 vs 8/10 | `annotations/pilot/` | ✓ |
-| Table 2 | Llama corrected honesty, agreed only | 35.0 → 26.7 (-8.3) | 35.0 → 26.7 (-8.3) | `results/labels/corrected_bounds.csv` | ✓ |
-| Table 2 | GPT-4o-mini corrected honesty, agreed only | 45.0 → 33.3 (-11.7) | 45.0 → 33.3 (-11.7) | `results/labels/corrected_bounds.csv` | ✓ |
-| Table 2 | Llama corrected honesty, either annotator | 33.3 → 10.0 (-23.3) | 33.3 → 10.0 (-23.3) | `results/labels/corrected_bounds.csv` | ✓ |
-| Table 2 | GPT-4o-mini corrected honesty, either annotator | 36.7 → 18.3 (-18.4) | 36.7 → 18.3 (-18.4) | `results/labels/corrected_bounds.csv` | ✓ |
-| Table 3 | Agreed answers scored (misleading / not) | 59 (51 / 8) | 59 (51 / 8) | `results/labels/tool_vs_human.csv` | ✓ |
-| Table 3 | Any span: flagged, precision, recall, specificity, BA | 59/59, 0.86, 1.00, 0/8, 0.50 | 59/59, 0.86, 1.00, 0/8, 0.50 | `results/labels/tool_vs_human.csv` | ✓ |
-| Table 3 | Persuading span: flagged, precision, recall, specificity, BA | 51/59, 0.92, 0.92, 4/8, 0.71 | 51/59, 0.92, 0.92, 4/8, 0.71 | `results/labels/tool_vs_human.csv` | ✓ |
-| 4.3 | Mean flagged spans, misleading vs not | 4.9 vs 2.5 | 4.9 vs 2.5 | `results/labels/span_stats.csv` | ✓ |
-| 4.3 | Empty reassurance present, misleading vs not | 90% vs 25% | 90% vs 25% | `results/labels/span_stats.csv` | ✓ |
-| 4.3 | Non-misleading answers tagged non-answer | 5 of 8 | 5 of 8 | `results/labels/span_stats.csv` | ✓ |
+| 4.2 | Agreed misleading, imply vs baseline | 39 of 42 vs 12 of 17 | 39 of 42 vs 12 of 17 | `annotations/pilot/` | ✓ |
+| 4.2 | Adjudicated misleading, imply vs baseline | 50 of 61 vs 13 of 23 | 50 of 61 vs 13 of 23 | `results/labels/by_condition.csv` | ✓ |
+| 4.2 | Adjudicated misleading, Llama imply vs baseline | 23/30 vs 4/8 | 23/30 vs 4/8 | `results/labels/by_condition.csv` | ✓ |
+| 4.2 | Adjudicated misleading, GPT-4o-mini imply vs baseline | 27/31 vs 9/15 | 27/31 vs 9/15 | `results/labels/by_condition.csv` | ✓ |
+| 3.3 | Disputes resolved to first author: N / Y | 13 / 12 | 13 / 12 | `annotations/pilot/adjudication.csv` | ✓ |
+| Table 2 | Llama corrected, adjudicated | 35.0 → 18.3 (-16.7) | 35.0 → 18.3 (-16.7) | `results/labels/corrected_bounds.csv` | ✓ |
+| Table 2 | GPT-4o-mini corrected, adjudicated | 43.3 → 23.3 (-20.0) | 43.3 → 23.3 (-20.0) | `results/labels/corrected_bounds.csv` | ✓ |
+| Table 2 | Llama corrected, agreed only | 35.0 → 26.7 (-8.3) | 35.0 → 26.7 (-8.3) | `results/labels/corrected_bounds.csv` | ✓ |
+| Table 2 | GPT-4o-mini corrected, agreed only | 45.0 → 33.3 (-11.7) | 45.0 → 33.3 (-11.7) | `results/labels/corrected_bounds.csv` | ✓ |
+| Table 2 | Llama range of change over all resolutions | -25.0 to -6.7 | -25.0 to -6.7 | `results/labels/corrected_bounds.csv` | ✓ |
+| Table 2 | GPT-4o-mini range of change over all resolutions | -26.7 to -3.3 | -26.7 to -3.3 | `results/labels/corrected_bounds.csv` | ✓ |
+| Table 3 | Adjudicated labels: misleading / not | 63 / 21 | 63 / 21 | `results/labels/tool_vs_human.csv` | ✓ |
+| Table 3 | Any span (adjudicated): flagged, P, R, spec, BA | 84/84, 0.75, 1.00, 0/21, 0.50 | 84/84, 0.75, 1.00, 0/21, 0.50 | `results/labels/tool_vs_human.csv` | ✓ |
+| Table 3 | Persuading span (adjudicated): flagged, P, R, spec, BA | 67/84, 0.84, 0.89, 10/21, 0.68 | 67/84, 0.84, 0.89, 10/21, 0.68 | `results/labels/tool_vs_human.csv` | ✓ |
+| Table 3 | Persuading span (agreed only): flagged, P, R, spec, BA | 51/59, 0.92, 0.92, 4/8, 0.71 | 51/59, 0.92, 0.92, 4/8, 0.71 | `results/labels/tool_vs_human.csv` | ✓ |
+| 4.3 | Mean flagged spans, misleading vs not (adjudicated) | 4.9 vs 3.4 | 4.9 vs 3.4 | `results/labels/span_stats.csv` | ✓ |
+| 4.3 | Non-misleading answers tagged non-answer (adjudicated) | 15 of 21 | 15 of 21 | `results/labels/span_stats.csv` | ✓ |
 | 4.4 | Long answers checked; burying flagged in | 6; 2 | 6; 2 | `results/burying/summary.csv` | ✓ |
 | 4.4 | Length range of long answers (characters) | 1,341 to 2,456 | 1,341 to 2,456 | `results/burying/summary.csv` | ✓ |
 | 3.2 | Flagger cost per answer | under 1¢ | – | `outputs/flags_v02/calls.jsonl (local cache)` | not checkable here (local cache) |
