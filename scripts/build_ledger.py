@@ -88,6 +88,12 @@ VENDOR = {"GPT-4o-mini": "OpenAI", "Llama-3.3-70B": "Meta", "DeepSeek-V3.1": "De
           "Claude-Haiku-4.5": "Anthropic", "Qwen3-235B": "Alibaba", "Mistral-Small-3.2": "Mistral"}
 L, G = "meta-llama/llama-3.3-70b-instruct", "openai/gpt-4o-mini"
 
+def study_row(typ, outcome, nd):
+    r = pd.read_csv(R / "study/summary.csv").query("type == @typ and outcome == @outcome").iloc[0]
+    f = lambda x, sign=False: (f"{x:+.{nd}f}" if sign else f"{x:.{nd}f}").replace("-", "−")
+    return f"{f(r.plain)} → {f(r.highlighted)}, {f(r['diff'], True)} [{f(r.ci_low, True)}, {f(r.ci_high, True)}]"
+
+
 CLAIMS = [
     # (section, claim, value as written, recompute, source)
     ("4.1", "Llama MASK honesty, baseline → imply", "41.7 → 56.7",
@@ -181,6 +187,15 @@ CLAIMS = [
      lambda: (lambda b: f"{len(b)}; {(b.n_burying > 0).sum()}")(pd.read_csv(R / "burying/summary.csv")), "results/burying/summary.csv"),
     ("4.4", "Length range of long answers (characters)", "1,341 to 2,456",
      lambda: (lambda b: f"{b.length.min():,} to {b.length.max():,}")(pd.read_csv(R / "burying/summary.csv")), "results/burying/summary.csv"),
+    ("4.4", "Study sessions: received; excluded (speed); analysed", "5; 1; 4",
+     lambda: (lambda s: f"{len(s)}; {s.excluded.sum()}; {(~s.excluded).sum()}")(pd.read_csv(R / "study/sessions.csv")),
+     "results/study/sessions.csv"),
+    ("Table 4", "Evasive belief: plain → highlighted, diff [CI]", "45.7 → 45.3, −0.3 [−19.8, +16.2]",
+     lambda: study_row("evasive", "belief_truth", 1), "results/study/summary.csv"),
+    ("Table 4", "Truthful trust: plain → highlighted, diff [CI]", "3.25 → 2.75, −0.50 [−1.00, +0.12]",
+     lambda: study_row("truthful", "trust", 2), "results/study/summary.csv"),
+    ("Table 4", "Lie belief: plain → highlighted, diff [CI]", "37.8 → 43.1, +5.4 [−23.5, +39.1]",
+     lambda: study_row("lie", "belief_truth", 1), "results/study/summary.csv"),
     ("3.2", "Flagger cost per answer", "under 1¢",
      lambda: (lambda f: "under 1¢" if f < 0.01 else f"${f:.4f}")(
          sum(json.loads(x).get("cost", 0) for x in (ROOT / "outputs/flags_v02/calls.jsonl").read_text().splitlines()) / 84)

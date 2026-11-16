@@ -58,4 +58,8 @@ A ✗ means a listed expected value differs from its recomputed value; the scrip
 | 4.3 | Non-misleading answers tagged non-answer (adjudicated) | 15 of 21 | 15 of 21 | `results/labels/span_stats.csv` | ✓ |
 | 4.4 | Long answers checked; burying flagged in | 6; 2 | 6; 2 | `results/burying/summary.csv` | ✓ |
 | 4.4 | Length range of long answers (characters) | 1,341 to 2,456 | 1,341 to 2,456 | `results/burying/summary.csv` | ✓ |
+| 4.4 | Study sessions: received; excluded (speed); analysed | 5; 1; 4 | 5; 1; 4 | `results/study/sessions.csv` | ✓ |
+| Table 4 | Evasive belief: plain → highlighted, diff [CI] | 45.7 → 45.3, −0.3 [−19.8, +16.2] | 45.7 → 45.3, −0.3 [−19.8, +16.2] | `results/study/summary.csv` | ✓ |
+| Table 4 | Truthful trust: plain → highlighted, diff [CI] | 3.25 → 2.75, −0.50 [−1.00, +0.12] | 3.25 → 2.75, −0.50 [−1.00, +0.12] | `results/study/summary.csv` | ✓ |
+| Table 4 | Lie belief: plain → highlighted, diff [CI] | 37.8 → 43.1, +5.4 [−23.5, +39.1] | 37.8 → 43.1, +5.4 [−23.5, +39.1] | `results/study/summary.csv` | ✓ |
 | 3.2 | Flagger cost per answer | under 1¢ | – | `outputs/flags_v02/calls.jsonl (local cache)` | not checkable here (local cache) |

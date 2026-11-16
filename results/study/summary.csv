@@ -1,10 +1,10 @@
 type,role,outcome,n_people,plain,highlighted,diff,ci_low,ci_high
-evasive,primary / secondary,belief_truth,2,49.167,38.833,-10.333,-29.333,8.667
-evasive,primary / secondary,trust,2,2.5,3.0,0.5,0.333,0.667
-evasive,primary / secondary,misled,2,0.5,0.667,0.167,0.0,0.333
-truthful,backfire check,belief_truth,2,56.0,44.5,-11.5,-16.5,-6.5
-truthful,backfire check,trust,2,2.75,2.5,-0.25,-1.0,0.5
-truthful,backfire check,misled,2,0.5,1.0,0.5,0.5,0.5
-lie,blind spot,belief_truth,2,25.5,47.75,22.25,-11.5,56.0
-lie,blind spot,trust,2,3.5,3.75,0.25,-1.5,2.0
-lie,blind spot,misled,2,0.5,0.5,0.0,-0.5,0.5
+evasive,primary / secondary,belief_truth,4,45.667,45.333,-0.333,-19.833,16.167
+evasive,primary / secondary,trust,4,2.667,2.667,0.0,-0.5,0.5
+evasive,primary / secondary,misled,4,0.667,0.5,-0.167,-0.5,0.167
+truthful,backfire check,belief_truth,4,45.375,45.0,-0.375,-11.5,10.75
+truthful,backfire check,trust,4,3.25,2.75,-0.5,-1.0,0.125
+truthful,backfire check,misled,4,0.625,0.75,0.125,-0.25,0.5
+lie,blind spot,belief_truth,4,37.75,43.125,5.375,-23.5,39.125
+lie,blind spot,trust,4,2.75,3.125,0.375,-0.875,1.5
+lie,blind spot,misled,4,0.25,0.625,0.375,-0.25,0.875

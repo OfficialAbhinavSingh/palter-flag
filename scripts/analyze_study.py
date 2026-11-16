@@ -38,9 +38,13 @@ def load():
     if ex.exists():
         manual = dict(pd.read_csv(ex)[["pid", "reason"]].itertuples(index=False))
 
-    sessions, rows = [], []
-    for f in sorted((ROOT / "outputs/study_responses").glob("*.json")):
-        d = json.loads(f.read_text())
+    sessions, rows, seen = [], [], set()
+    subs = sorted((json.loads(f.read_text()) for f in (ROOT / "outputs/study_responses").glob("*.json")),
+                  key=lambda d: d["received_at"])
+    for d in subs:
+        if d["pid"] in seen:  # the same session sent twice (double tap or retry): keep the first
+            continue
+        seen.add(d["pid"])
         res = d["results"]
         med = float(np.median([r["ms"] for r in res])) / 1000
         reasons = []
@@ -63,6 +67,7 @@ def load():
             rows.append({"pid": d["pid"], "item": r["item"], "type": k["type"], "highlight": r["highlight"],
                          "belief_truth": truth, "trust": r.get("trust"), "misled": truth < 50,
                          "brier": (1 - truth / 100) ** 2, "sec": r["ms"] / 1000, "order": r["order"]})
+    load.duplicates = len(subs) - len(seen)
     return pd.DataFrame(sessions), pd.DataFrame(rows)
 
 
@@ -109,7 +114,8 @@ def main():
     n_in, n_out = (~sessions.excluded).sum(), sessions.excluded.sum()
     lines = [
         "# Palter Flag user study: current results", "",
-        f"Sessions: {len(sessions)} received, {n_in} analysed, {n_out} excluded.",
+        f"Sessions: {len(sessions)} received, {n_in} analysed, {n_out} excluded"
+        f" ({load.duplicates} duplicate submission(s) of an already received session dropped).",
     ]
     for _, s in sessions[sessions.excluded].iterrows():
         lines.append(f"- excluded {s.pid[:8]}: {s.reason}")

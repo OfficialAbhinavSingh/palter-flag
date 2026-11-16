@@ -70,7 +70,7 @@ Outcomes, written into the analysis script after the first two responses arrived
 | truthful | Do highlights make honest answers look worse? (backfire check) |
 | lie | Does a lightly flagged lie get trusted more? (blind spot: the tool cannot fact-check) |
 
-The estimate is each person's highlighted-minus-plain difference, averaged over people, with a bootstrap CI that resamples participants. Current numbers: [`results/study/report.md`](results/study/report.md).
+The estimate is each person's highlighted-minus-plain difference, averaged over people, with a bootstrap CI that resamples participants. We closed the study at a fixed cutoff (16 November, 09:33 IST) set by the submission deadline. Five people took part against a planned 20; one was excluded for speed, leaving four. On the primary outcome highlights made no visible difference (−0.3 points, 95% CI −19.8 to +16.2), and no interval excludes zero. Four people are too few to say whether the tool helps; this run checks the pipeline. Numbers: [`results/study/report.md`](results/study/report.md).
 
 ## Status
 
@@ -78,7 +78,7 @@ The estimate is each person's highlighted-minus-plain difference, averaged over 
 |---|---|
 | MASK pilot: 7 models from 7 vendors, 60 items each | done |
 | Palter Flag v0.2 (study version), v0.3 (burying) | done |
-| User study | collecting responses |
+| User study | pilot closed: 4 analysed of a planned 20, too few to estimate effects |
 | Human labels on 84 evasive answers (2 blind annotators) | done: κ = 0.19, counting misleading evasions flips MASK's result under every resolution of disagreements |
 | Report to Apart | due Mon 16 Nov 2026, 17:29 IST |
 
@@ -121,7 +121,7 @@ python scripts/build_ledger.py
 python -m unittest discover -s tests -v
 ```
 
-These commands neither fetch private study responses nor run models. A passing ledger can still have local-cache entries marked not checkable. The tracked study results contain only two initial responses and are pipeline checks, not final participant findings.
+These commands neither fetch private study responses nor run models. A passing ledger can still have local-cache entries marked not checkable. The tracked study results cover four analysed participants and are a pipeline check, not evidence about the tool.
 
 ## Reproduce model runs (API calls may spend money)
 

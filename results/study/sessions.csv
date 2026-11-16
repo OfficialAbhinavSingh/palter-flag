@@ -1,3 +1,6 @@
 pid,received_at,use,src,median_sec,total_min,excluded,reason
 73457b9c-f006-4708-a488-1cf80066d146,2026-11-15T07:27:31.294Z,daily,friend,91.7,29.3,False,
 73438f4b-1010-4b3d-8243-5e50161bba0e,2026-11-15T08:17:02.119Z,daily,hub,314.9,79.3,False,
+fb83d02d-56e9-49c7-a47e-ea1c85245f00,2026-11-15T15:31:43.639Z,daily,friend,93.0,20.0,False,
+ce8a17a5-dece-40ba-a89a-33f3dd4ca100,2026-11-15T17:07:31.273Z,daily,friend,6.4,5.4,True,median 6s per item
+cad034a7-0372-4f5d-ac54-586f47723804,2026-11-15T17:34:42.107Z,daily,friend,43.3,80.2,False,
